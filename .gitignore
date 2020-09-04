@@ -1,24 +1,20 @@
-#### Ignore all files without extension#####
-# Ignore all
-*
-# Unignore all with extensions
-!*.*
-# Unignore all dirs
-!*/
-##########################################
-#we need this mnv script for java builds
-!**/mvnw
-
 **/.DS_Store
+
 #vscode
 **/.vscode/
-**/venv
-**/node_modules
+
+#python
+pyhton/**/venv
+
+#nodejs
+node.js/**/node_modules
+
 #java
-**/.idea
-**/*.iml
-**/.mvn
+java/**/.idea
+java/**/*.iml
+java/**/.mvn
 java/**/target
+
 #dotnet
 dotnet/**/bin
 dotnet/**/obj

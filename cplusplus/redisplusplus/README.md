@@ -1,8 +1,54 @@
-Follow the instructions at https://github.com/sewenew/redis-plus-plus?undefined#installation to install hiredis and redisplusplus
+# Name  redis-plus-plus
+* Library: https://github.com/sewenew/redis-plus-plus
+* Library version : master branch
+* Runtime Version: C++ 11 / C++ 17
+* RS version: **ToDo**
+* OSS Redis: 6.0.6
 
+|     | Simple | Sentinel| Cluster|
+|:--- |:---:   |:---:    |:---:   |
+|     | Y      | Y       | Y      |
+| TLS | N/C    | N/C     | N/C   | 
+
+* N/A : Not Available
+* N/C : Not researched or checked
+## Comments
+Excellent documentation and examples. A C++ wrapper around hiredis
+
+## Prerequisite
+C++ dev environment 
+
+## Setup
+Install C++ tools and development environment. Follow the instructions [here](https://github.com/sewenew/redis-plus-plus?undefined#installation) to install hiredis and redis-plus-plus.
+
+## Run
+Password is optional for all samples. Assuming headers and libraries during setup were installed at default locations.
+
+### Simple
+Compile
+```
 g++ -std=c++11 -o simple  simple.cpp -lredis++ -lhiredis -pthread
-g++ -std=c++11 -o cluster  cluster.cpp -lredis++ -lhiredis -pthread
+```
+Run
+```
+./simple host port password
+```
+### Sentinel 
+Compile
+```
 g++ -std=c++11 -o sentinel  sentinel.cpp -lredis++ -lhiredis -pthread
+```
+Run
+```
+./sentinel sentinelhost sentinelport service password
+```
 
-//static compile
-g++ -std=c++11 -o sentinel sentinel.cpp /Users/kyousaf/Dev/Development3/repo/connect/cplusplus/redisplusplus/delete/redis-plus-plus/compile/lib/libredis++.a /Users/kyousaf/Dev/Development3/repo/connect/cplusplus/redisplusplus/delete/hiredis/libhiredis.a -pthread
+### Cluster
+Compile
+```
+g++ -std=c++11 -o cluster  cluster.cpp -lredis++ -lhiredis -pthread
+```
+Run
+```
+./cluster host port password
+```

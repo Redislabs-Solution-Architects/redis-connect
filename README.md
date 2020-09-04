@@ -1,50 +1,45 @@
-A collection of samples using different libraries to connect to redis
+A collection of samples using different libraries to connect to redis and redis enterprise
 
-* When writing readme assume user can follow instructions but is not familiar with the language
-* Use minimal dependencies. 
-* Prefer simplicity over advanced language features
-* Single file should execute, have minimal code and  should be able to share the single file as an example.
-* Prefer copy/paste over reuse across sample files
-* Use connection pooling where the library supports it. As this is the most common scenario for a production examples 
-
-For each library have the samples for following with and without TLS
+For each library have the following connection types
 * Simple connection to single endpoint
 * Sentinel
 * Cluster
 
+# Sample Program 
 In each example
 * Connect to Redis
-* simple get/set
+* simple get/set command and show output
 * Close connection/connection pool
-* In case of sentinel or cluster API , show where more sentinels or hosts can be added
+* In case of sentinel or cluster API , show where more sentinels or nodes can be added
+
 
 
 # Coverage
 
-
-| Library               | Redis| RS  | Notes               |
-| --------------------- |:----:|:---:|:-------------------:|
-| Java Jedis            | Y    | N   |     | |
-| Java Lettuce          | Y    | N   |     | |
-|.Net StackExchange     | Y    | N   |     | |
-| Python redis          | Y    | N   |     | |
-| JS ironredis          | Y    | N   |     | |
-| JS noderedis          | Y    | N   |     | |
-| golang go-redis       | Y    | N   |     | |
-| golang redigo         | Y    | N   |     | |
-| C++ redisplusplus     | Y    | N   |     | |
-
+| Library                                               | Redis| RS  | Notes               |
+| ---------------------------------------------         |:----:|:---:|:-------------------:|
+| [Java Jedis](java/jedis/README.md)                    | Y    | N   |     | |
+| [Java Lettuce](java/lettuce/README.md)                | Y    | N   |     | |
+| [.Net StackExchange](dotnet/stackexchange/README.md)  | Y    | N   |     | |
+| [Python redispy](python/redispy/README.md)            | Y    | N   |     | |
+| [Node.js ioredis](node.js/ioredis/README.md)          | Y    | N   |     | |
+| [Node.js noderedis](node.js/node-redis/README.md)     | Y    | N   |     | |
+| [golang go-redis](golang/go-redis/README.md)          | Y    | N   |     | |
+| [golang redigo](golang/redigo/README.md)              | Y    | N   |     | |
+| [C++ redisplusplus](cplusplus/redisplusplus/README.md)| Y    | N   |     | |
 
 
+# Assumptions
+* When writing readme.md assume user can follow instructions but is not familiar with the language or eco system
+* Use minimal dependencies. 
+* Prefer simplicity over advanced language features
+* Single file should execute, have minimal code and, should be able to share the single file as an example.
+* Prefer copy/paste over reuse of code across sample files
+* Use connection pooling where the library supports it. As this is the most common scenario for a production examples 
 
 
-
-
-Note these are getting started samples, different libraries support multiple programming styles
-
-## TODO
-Show 
-* blocking operation
-* pub/sub
-
-Samples for TLS configuration
+# TODO
+* Samples for TLS (2 way)
+* Example blocking operation if supported
+* Pub/Sub
+* Add Spring boot sample
