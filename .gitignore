@@ -12,7 +12,6 @@ node.js/**/node_modules
 #java
 java/**/.idea
 java/**/*.iml
-java/**/.mvn
 java/**/target
 
 #dotnet
