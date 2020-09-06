@@ -15,18 +15,19 @@ In each example
 
 
 # Coverage
+Samples are tested with
 
-| Library                                               | Redis| RS  | Notes               |
-| ---------------------------------------------         |:----:|:---:|:-------------------:|
-| [Java Jedis](java/jedis/README.md)                    | Y    | N   |     | |
-| [Java Lettuce](java/lettuce/README.md)                | Y    | N   |     | |
-| [.Net StackExchange](dotnet/stackexchange/README.md)  | Y    | N   |     | |
-| [Python redispy](python/redispy/README.md)            | Y    | N   |     | |
-| [Node.js ioredis](node.js/ioredis/README.md)          | Y    | N   |     | |
-| [Node.js noderedis](node.js/node-redis/README.md)     | Y    | N   |     | |
-| [golang go-redis](golang/go-redis/README.md)          | Y    | N   |     | |
-| [golang redigo](golang/redigo/README.md)              | Y    | N   |     | |
-| [C++ redisplusplus](cplusplus/redisplusplus/README.md)| Y    | N   |     | |
+| Library                                               | OSS Redis| Redis Enterprise  | Notes               |
+| ---------------------------------------------         |:----:|:---:|:--------------------|
+| [Java Jedis](java/jedis/README.md)                    | Y    | Y   |     | |
+| [Java Lettuce](java/lettuce/README.md)                | Y    | Y   |     | |
+| [.Net StackExchange](dotnet/stackexchange/README.md)  | Y    | Y   |Sentinel does not work with 2.1.58 for RS use 2.1.30| |
+| [Python redispy](python/redispy/README.md)            | Y    | Y   |     | |
+| [Node.js ioredis](node.js/ioredis/README.md)          | Y    | Y   |     | |
+| [Node.js noderedis](node.js/node-redis/README.md)     | Y    | Y   |     | |
+| [golang go-redis](golang/go-redis/README.md)          | Y    | Y   |Sentinel with a db with password does not work| |
+| [golang redigo](golang/redigo/README.md)              | Y    | Y   |     | |
+| [C++ redisplusplus](cplusplus/redisplusplus/README.md)| Y    | Y  |     | |
 
 
 # Assumptions

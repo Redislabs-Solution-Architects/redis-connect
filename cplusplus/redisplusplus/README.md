@@ -2,7 +2,7 @@
 * Library: https://github.com/sewenew/redis-plus-plus
 * Library version : master branch
 * Runtime Version: C++ 11 / C++ 17
-* RS version: **ToDo**
+* RS version: 6.0.6-35
 * OSS Redis: 6.0.6
 
 |     | Simple | Sentinel| Cluster|
@@ -19,7 +19,7 @@ Excellent documentation and examples. A C++ wrapper around hiredis
 C++ dev environment 
 
 ## Setup
-Install C++ tools and development environment. Follow the instructions [here](https://github.com/sewenew/redis-plus-plus?undefined#installation) to install hiredis and redis-plus-plus.
+Install C++ tools and development environment. Follow the instructions [here](https://github.com/sewenew/redis-plus-plus?undefined#installation) to install hiredis and redis-plus-plus. On *nixes remember to set `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib` in shell before executing binary.
 
 ## Run
 Password is optional for all samples. Assuming headers and libraries during setup were installed at default locations.

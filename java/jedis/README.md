@@ -2,7 +2,7 @@
 * Library: Jedis https://github.com/xetorthio/jedis
 * Library version : 3.3.0
 * Runtime Version: JDK 12
-* RS version: **ToDo**
+* RS version: 6.0.6-35
 * OSS Redis: 6.0.6
 
 |     | Simple | Sentinel| Cluster|

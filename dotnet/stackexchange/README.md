@@ -1,8 +1,8 @@
 # .NET StackExchange.Redis 
 * Library: https://stackexchange.github.io/StackExchange.Redis/
-* Library version : 2.1.58
+* Library version : 2.1.58. RS sentinel does not work with version 2.1.58 and uses older version 2.1.30
 * Runtime Version: .Net Core 3.1.201
-* RS version: **ToDo**
+* RS version: 6.0.6-35
 * OSS Redis: 6.0.6
 
 |     | Simple | Sentinel| Cluster|
@@ -16,7 +16,7 @@
 ## Comments
 Major OSS .Net library
 * Simple and Cluster client are same
-* Does not support blocking operation and wait command
+* Does not support blocking operation and wait commands
 
 ## Prerequisite
 

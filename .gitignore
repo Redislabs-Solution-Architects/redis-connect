@@ -4,7 +4,7 @@
 **/.vscode/
 
 #python
-pyhton/**/venv
+python/**/venv
 
 #nodejs
 node.js/**/node_modules
