@@ -9,9 +9,8 @@ import (
 	"github.com/pihao/redis-go-cluster"
 )
 
-var host, port, password string
-
 func main() {
+	var host, port, password string
 
 	if !(len(os.Args) == 3 || len(os.Args) == 4) {
 		fmt.Println("Usage: host port  password")

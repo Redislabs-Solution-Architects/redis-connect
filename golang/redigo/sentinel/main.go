@@ -11,9 +11,8 @@ import (
 	"github.com/gomodule/redigo/redis"
 )
 
-var sentinelHost, sentinelPort, service, password string
-
 func main() {
+	var sentinelHost, sentinelPort, service, password string
 
 	if !(len(os.Args) == 4 || len(os.Args) == 5) {
 		fmt.Println("Usage: sentinelhost sentinelport service password")
