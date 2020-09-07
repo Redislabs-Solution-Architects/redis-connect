@@ -27,7 +27,8 @@ Samples are tested with
 | [Node.js noderedis](node.js/node-redis/README.md)     | Y    | Y   |     | |
 | [golang go-redis](golang/go-redis/README.md)          | Y    | Y   |Sentinel with a db with password does not work| |
 | [golang redigo](golang/redigo/README.md)              | Y    | Y   |     | |
-| [C++ redisplusplus](cplusplus/redisplusplus/README.md)| Y    | Y  |     | |
+| [C++ redisplusplus](cplusplus/redisplusplus/README.md)| Y    | Y   |     | |
+| [ruby ruby-rb](ruby/redis-rb/README.md)               | Y    | N  |      | |
 
 
 # Assumptions
