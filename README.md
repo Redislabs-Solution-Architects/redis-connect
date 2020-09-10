@@ -28,7 +28,7 @@ Samples are tested with
 | [golang go-redis](golang/go-redis/README.md)          | Y    | Y   |Sentinel with a db with password does not work| |
 | [golang redigo](golang/redigo/README.md)              | Y    | Y   |     | |
 | [C++ redisplusplus](cplusplus/redisplusplus/README.md)| Y    | Y   |     | |
-| [ruby ruby-rb](ruby/redis-rb/README.md)               | Y    | N  |      | |
+| [ruby ruby-rb](ruby/redis-rb/README.md)               | Y    | N   |     | |
 
 
 # Assumptions
@@ -38,6 +38,7 @@ Samples are tested with
 * Single file should execute, have minimal code and, should be able to share the single file as an example.
 * Prefer copy/paste over reuse of code across sample files
 * Use connection pooling where the library supports it. As this is the most common scenario for a production examples 
+* TLS samples are only tested with RS
 
 
 # TODO
