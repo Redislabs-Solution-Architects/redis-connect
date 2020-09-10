@@ -1,6 +1,6 @@
  # Ruby redis-rb
-* Library: redis-rb 
-* Library version : https://github.com/redis/redis-rb
+* Library: redis-rb https://github.com/redis/redis-rb
+* Library version : 4.2.2
 * Runtime Version: 2.7.1
 * RS version: TBD
 * OSS Redis: 6.0.6
