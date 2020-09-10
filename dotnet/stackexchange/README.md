@@ -39,3 +39,21 @@ cd sentinel
 dotnet build
 dotnet run sentinelhost sentinelport service password
 ```
+
+### Simple/Cluster TLS
+Change the location for PFX file and password in code. for oneway TLS comment out the certificate line
+
+cd simpletls
+```
+dotnet build
+dotnet run host port password
+```
+
+### Sentinel TLS
+Change the location for PFX file and password in code. for oneway TLS comment out the certificate line. Note for Discovery service the sample also use TLS
+
+cd sentineltls
+```
+dotnet build
+dotnet run sentinelhost sentinelport service password
+```
