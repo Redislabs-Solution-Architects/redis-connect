@@ -7,8 +7,8 @@ namespace simpletls
 {
     class Program
     {
-        const string PFX_FILE = "proxy.pfx";
-        const string PFX_PASSWORD = "A-4TVrVCHg*8Ztm";
+        const string PFX_FILE = "../../../testscripts/tls/db_cert.pfx";
+        const string PFX_PASSWORD = "A4TVrVCHg8Ztm";
         static string host;
         static int port;
 

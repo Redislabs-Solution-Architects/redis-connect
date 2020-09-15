@@ -5,6 +5,7 @@
 
 #python
 python/**/venv
+testscripts/**/venv
 
 #nodejs
 node.js/**/node_modules

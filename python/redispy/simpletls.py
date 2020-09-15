@@ -13,7 +13,7 @@ def main():
 
     r = redis.StrictRedis(host=host, port=port, password=password,
         ssl=True,
-        #ssl_keyfile='proxy_key.pem',
+        ssl_keyfile='proxy_key.pem',
         ssl_certfile='proxy_cert.pem',
         ssl_cert_reqs='required',
         ssl_ca_certs='proxy_cert.pem')
