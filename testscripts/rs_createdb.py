@@ -48,7 +48,7 @@ def add_certs(req, public_file):
 
 def main():
 
-    print("#SIMPLE HA 4 shard 10001")
+    print("\n\n++ SIMPLE HA 4 shard 10001\n")
     req = {
         "name": "simple",
         "port": 10001,
@@ -61,7 +61,7 @@ def main():
     }
     print(create_db(req).content)
 
-    print("SIMPLEP HA 4 shard with password 10002")
+    print("\n\n++ SIMPLEP HA 4 shard with password 10002\n")
     req = {
         "name": "simple-p",
         "port": 10002,
@@ -75,11 +75,12 @@ def main():
     }
     print(create_db(req).content)
 
-    print("CLUSTER HA 6 shard with OSS cluster 10003")
+    print("\n\n++CLUSTER HA 6 shard with OSS cluster 10003\n")
     req = {
         "name": "cluster",
         "port": 10003,
         "type": "redis",
+        "sharding": True,
         "shards_count": 3,
         "replication": True,
         "memory_size": 1073741824,
@@ -90,7 +91,7 @@ def main():
     }
     print(create_db(req).content)
 
-    print("CLUSTERP HA 6 shard with OSS cluster with password 10004")
+    print("\n\n++ CLUSTERP HA 6 shard with OSS cluster with password 10004\n")
     req = {
         "name": "cluster-p",
         "port": 10004,
@@ -107,7 +108,7 @@ def main():
     }
     print(create_db(req).content)
 
-    print("#SIMPLETLS HA 4 shard with mTLS 10005")
+    print("\n\n++ SIMPLETLS HA 4 shard with mTLS 10005\n")
     req = {
         "name": "simple-tls",
         "port": 10005,
@@ -123,7 +124,7 @@ def main():
     add_certs(req, "tls/db_cert.pem")
     print(create_db(req).content)
 
-    print("SIMPLEPTLS HA 4 shard with password with mTLS 10006")
+    print("\n\n++ SIMPLEPTLS HA 4 shard with password with mTLS 10006\n")
     req = {
         "name": "simple-p-tls",
         "port": 10006,
@@ -140,7 +141,7 @@ def main():
     add_certs(req, "tls/db_cert.pem")
     print(create_db(req).content)
 
-    print("CLUSTERTLS HA 6 shard with OSS cluster with mTLS 10007")
+    print("\n\n++ CLUSTERTLS HA 6 shard with OSS cluster with mTLS 10007\n")
     req = {
         "name": "cluster-tls",
         "port": 10007,
@@ -159,7 +160,7 @@ def main():
     add_certs(req, "tls/db_cert.pem")
     print(create_db(req).content)
 
-    print("CLUSTER_P_TLS HA 6 shard with OSS cluster with password with TLS 10008")
+    print("\n\n++ CLUSTER_P_TLS HA 6 shard with OSS cluster with password with TLS 10008\n")
     req = {
         "name": "cluster-p-tls",
         "port": 10008,

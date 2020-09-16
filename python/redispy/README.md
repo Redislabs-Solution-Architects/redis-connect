@@ -12,8 +12,9 @@
 * N/A : Not Available
 * N/C : Not researched or checked
 
-## Comments
-* *Cluster API supported by a separate extension to library  https://github.com/Grokzen/redis-py-cluster.
+## Comments/Gotchas
+* Cluster API supported by a separate extension to library  https://github.com/Grokzen/redis-py-cluster.
+* Sentinel with TLS requires a workaround https://github.com/andymccurdy/redis-py/issues/1306
 
 ## Prerequisite
 Install Python3 for your platform https://www.python.org/downloads/
@@ -38,9 +39,20 @@ Start Redis instance.
 python simple.py redishost port password
 ```
 
+### SimpleTLS
+
+```
+python simpletls.py redishost port password
+```
+
 ### Sentinel 
 ```
 python sentinel.py sentinelhost port service password
+```
+
+### SentinelTLS
+```
+python sentineltls.py sentinelhost port service password
 ```
 
 ### Cluster
@@ -56,6 +68,12 @@ Install the dependencies
 ```
  pip install -r requirements.txt 
  ```
+#### Cluster(normal)
 ```
 python cluster.py node1 port password
+```
+
+#### Cluster TLS
+```
+python clustertls.py node1 port password
 ```

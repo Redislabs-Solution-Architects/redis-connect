@@ -15,7 +15,14 @@ def main():
     # Add more nodes here to the list
     startup_nodes = [{"host": host, "port": port}]
     rc = rediscluster.RedisCluster(
-        startup_nodes=startup_nodes, decode_responses=True, password=password
+        startup_nodes=startup_nodes,
+        decode_responses=True,
+        password=password,
+        ssl=True,
+        ssl_keyfile="../../../testscripts/tls/db_key.pem",
+        ssl_certfile="../../../testscripts/tls/db_cert.pem",
+        ssl_cert_reqs="required",
+        ssl_ca_certs="../../../testscripts/tls/ca_cert.pem",
     )
     print("Connected to Redis")
     print("Set: {}".format(rc.set("foo", "bar")))
