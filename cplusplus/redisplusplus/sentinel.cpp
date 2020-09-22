@@ -18,8 +18,8 @@ int main(int argc, char* argv[]) {
   //sentinel options. 
   SentinelOptions sentinel_opts;
   sentinel_opts.nodes = {{sentinel_host, sentinel_port}};
-  sentinel_opts.connect_timeout = std::chrono::milliseconds(100);
-  sentinel_opts.socket_timeout = std::chrono::milliseconds(100);
+  sentinel_opts.connect_timeout = std::chrono::milliseconds(1000);
+  sentinel_opts.socket_timeout = std::chrono::milliseconds(1000);
   auto sentinel = std::make_shared<Sentinel>(sentinel_opts);
 
   //connection options note timeouts are required
@@ -27,12 +27,12 @@ int main(int argc, char* argv[]) {
   if (argc == 5) {
     opts.password = argv[4];  // password
   }
-  opts.connect_timeout = std::chrono::milliseconds(100);
-  opts.socket_timeout = std::chrono::milliseconds(100);
+  opts.connect_timeout = std::chrono::milliseconds(1000);
+  opts.socket_timeout = std::chrono::milliseconds(1000);
 
   ConnectionPoolOptions pool_opts;
   pool_opts.size = 3;
-  pool_opts.wait_timeout = std::chrono::milliseconds(50);
+  pool_opts.wait_timeout = std::chrono::milliseconds(100);
 
   auto redis = Redis(sentinel, service, Role::MASTER, opts, pool_opts);
 

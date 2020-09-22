@@ -16,11 +16,11 @@ int main(int argc, char* argv[]) {
   if (argc == 4) {
     opts.password = argv[3];
   }
-  opts.socket_timeout = std::chrono::milliseconds(50);
+  opts.socket_timeout = std::chrono::milliseconds(1000);
 
   ConnectionPoolOptions pool_opts;
   pool_opts.size = 3;
-  pool_opts.wait_timeout = std::chrono::milliseconds(50);
+  pool_opts.wait_timeout = std::chrono::milliseconds(100);
 
   auto redis = Redis(opts, pool_opts);
 
