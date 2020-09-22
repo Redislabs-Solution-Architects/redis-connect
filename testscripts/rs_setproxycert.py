@@ -26,8 +26,7 @@ def main():
     cert_list = []
     # create the public cert chain
     public_certs = ["tls/cluster_cert.pem", "tls/ca_cert.pem"]
-    #public_certs = ["tls/cluster_cert.pem", "tls/ca_cert.pem","tls/root_cert.pem"]
-    #public_certs = ["tls/cluster_cert.pem"]
+
     for cert in public_certs:
         with open(cert) as file:
             cert_list.append(file.read())
