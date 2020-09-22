@@ -15,10 +15,16 @@ public class Simple {
    String password;
 
     public static void main(String[] args) {
+        //Disable JVM DNS caching.
+        java.security.Security.setProperty("networkaddress.cache.ttl" , "0");
+        java.security.Security.setProperty("networkaddress.cache.negative.ttl", "0");
+
         if (!(args.length ==  2 || args.length == 3)) {
             System.out.println("Usage: host port password");
             System.exit(1);
         }
+
+
         Simple example = new Simple();
         example.host = args[0];
         example.port = Integer.parseInt(args[1]);
@@ -42,7 +48,7 @@ public class Simple {
         poolConfig.setMinEvictableIdleTimeMillis(60000);
         poolConfig.setTimeBetweenEvictionRunsMillis(30000);
         poolConfig.setNumTestsPerEvictionRun(-1);
-        poolConfig.setMaxTotal(500);
+        poolConfig.setMaxTotal(10);
 
         return new JedisPool(poolConfig, host, port, Protocol.DEFAULT_TIMEOUT, password, Protocol.DEFAULT_DATABASE);
     }
