@@ -36,6 +36,15 @@ java -cp ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar \
     -Djavax.net.ssl.trustStorePassword=${BUNDLE_PASSWORD} \
     -Djavax.net.debug=ssl \
     com.rl.sample.jedis.ClusterTLS $CLUSTER_TLS
+java -cp ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar \
+    -Djavax.net.ssl.keyStoreType=pkcs12 \
+    -Djavax.net.ssl.keyStore=../../testscripts/tls/db_cert.pfx \
+    -Djavax.net.ssl.keyStorePassword=${BUNDLE_PASSWORD} \
+    -Djavax.net.ssl.trustStoreType=jks \
+    -Djavax.net.ssl.trustStore=../../testscripts/tls/sample_ca_truststore.jks \
+    -Djavax.net.ssl.trustStorePassword=${BUNDLE_PASSWORD} \
+    -Djavax.net.debug=ssl \
+    com.rl.sample.jedis.ClusterTLS $CLUSTER_P_TLS
 
 #Lettuce
 cd $REPO_LOCATION/java/lettuce
@@ -164,3 +173,4 @@ ruby cluster.rb $CLUSTER
 ruby cluster.rb $CLUSTER_P
 
 cd $REPO_LOCATION/testscripts
+set +x
