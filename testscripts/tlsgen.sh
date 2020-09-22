@@ -37,7 +37,8 @@ intermediate_ca(){
         -days 3650 \
         -subj '/O=Redis Labs/CN=RL Intermediate Certificate Authority' \
         -out tls/ca_cert.pem
-
+    printf "** Creating Java trust store\n\n"
+    keytool -import -noprompt -file tls/ca_cert.pem -alias ca_cert  -keystore tls/sample_ca_truststore.jks -storepass ${BUNDLE_PASSWORD}
   
 }
 
@@ -81,9 +82,6 @@ EOF
     # Delete CSR and ${CLUSTER_FQDN}_altname.conf
     rm tls/cluster.csr tls/cluster_altname.conf
 
-    # TODO Create bundle for proxy
-    #cat ca_cert.pem cluster_cert.pem
-
 }   
 
 
@@ -124,6 +122,7 @@ EOF
     rm tls/${port}_altname.conf tls/${port}.csr
 
     #create PFX bundle for .Net
+    printf "** Creating DB PFX/pkscs12 bundle for java and .Net\n\n"
     openssl pkcs12 -export -in tls/${port}_cert.pem  -inkey tls/${port}_key.pem -certfile tls/ca_cert.pem -passout pass:${BUNDLE_PASSWORD} -out tls/${port}_cert.pfx
 
     # ToDo create JKS for Java
@@ -153,10 +152,9 @@ function generate_db_certs()
 
     rm tls/${prefix}.csr
 
-    #create PFX bundle for .Net
+    #create PFX bundle/PK12 for .Net and Java
+    printf "** Creating Intermediate CA public certificate\n\n"
     openssl pkcs12 -export -in tls/${prefix}_cert.pem  -inkey tls/${prefix}_key.pem -certfile tls/ca_cert.pem -passout pass:${BUNDLE_PASSWORD} -out tls/${prefix}_cert.pfx
-
-    # ToDo create JKS for Java
 }
 
 intermediate_ca
