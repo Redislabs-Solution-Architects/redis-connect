@@ -9,6 +9,33 @@ java -cp  ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sam
 java -cp  ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.jedis.Sentinel $SENTINEL_P
 java -cp  ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.jedis.Cluster $CLUSTER
 java -cp  ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.jedis.Cluster $CLUSTER_P
+java -cp ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar \
+    -Djavax.net.ssl.keyStoreType=pkcs12 \
+    -Djavax.net.ssl.keyStore=../../testscripts/tls/db_cert.pfx \
+    -Djavax.net.ssl.keyStorePassword=${BUNDLE_PASSWORD} \
+    -Djavax.net.ssl.trustStoreType=jks \
+    -Djavax.net.ssl.trustStore=../../testscripts/tls/sample_ca_truststore.jks \
+    -Djavax.net.ssl.trustStorePassword=${BUNDLE_PASSWORD} \
+    -Djavax.net.debug=ssl \
+    com.rl.sample.jedis.SimpleTLS $SIMPLE_TLS
+java -cp ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar \
+    -Djavax.net.ssl.keyStoreType=pkcs12 \
+    -Djavax.net.ssl.keyStore=../../testscripts/tls/db_cert.pfx \
+    -Djavax.net.ssl.keyStorePassword=${BUNDLE_PASSWORD} \
+    -Djavax.net.ssl.trustStoreType=jks \
+    -Djavax.net.ssl.trustStore=../../testscripts/tls/sample_ca_truststore.jks \
+    -Djavax.net.ssl.trustStorePassword=${BUNDLE_PASSWORD} \
+    -Djavax.net.debug=ssl \
+    com.rl.sample.jedis.SimpleTLS $SIMPLE_P_TLS
+java -cp ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar \
+    -Djavax.net.ssl.keyStoreType=pkcs12 \
+    -Djavax.net.ssl.keyStore=../../testscripts/tls/db_cert.pfx \
+    -Djavax.net.ssl.keyStorePassword=${BUNDLE_PASSWORD} \
+    -Djavax.net.ssl.trustStoreType=jks \
+    -Djavax.net.ssl.trustStore=../../testscripts/tls/sample_ca_truststore.jks \
+    -Djavax.net.ssl.trustStorePassword=${BUNDLE_PASSWORD} \
+    -Djavax.net.debug=ssl \
+    com.rl.sample.jedis.ClusterTLS $CLUSTER_TLS
 
 #Lettuce
 cd $REPO_LOCATION/java/lettuce
