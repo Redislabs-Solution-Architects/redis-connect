@@ -21,3 +21,17 @@ dotnet/**/obj
 
 #personal
 cplusplus/**/delete
+
+#tls generated certificates
+testscripts/tls
+
+#compiled c and go binaries. Maybe a bad idea but too much clutter
+cplusplus/redisplusplus/cluster
+cplusplus/redisplusplus/simple
+cplusplus/redisplusplus/sentinel
+golang/go-redis/cluster/cluster
+golang/go-redis/sentinel/sentinel
+golang/go-redis/simple/simple
+golang/redigo/cluster/cluster
+golang/redigo/sentinel/sentinel
+golang/redigo/simple/simple
