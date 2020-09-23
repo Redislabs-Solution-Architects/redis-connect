@@ -8,13 +8,14 @@
 |     | Simple | Sentinel| Cluster|
 |:--- |:---:   |:---:    |:---:   |
 |     | Y      | Y       | Y*     |
-| TLS | N/C    | N/C     | N/C    | 
+| TLS | Y      | Y       | Y*    | 
 * N/A : Not Available
 * N/C : Not researched or checked
 
 ## Comments/Gotchas
 * Cluster API supported by a separate extension to library  https://github.com/Grokzen/redis-py-cluster.
 * Sentinel with TLS requires a workaround https://github.com/andymccurdy/redis-py/issues/1306
+* ToDo: find way to verify ip address manually for Cluster/Sentinel TLS
 
 ## Prerequisite
 Install Python3 for your platform https://www.python.org/downloads/
@@ -40,7 +41,6 @@ python simple.py redishost port password
 ```
 
 ### SimpleTLS
-
 ```
 python simpletls.py redishost port password
 ```
@@ -66,7 +66,7 @@ deactivate previous venv by running `deactivate` and cd to **cluster**
 ```
 Install the dependencies
 ```
- pip install -r requirements.txt 
+pip install -r requirements.txt 
  ```
 #### Cluster(normal)
 ```
