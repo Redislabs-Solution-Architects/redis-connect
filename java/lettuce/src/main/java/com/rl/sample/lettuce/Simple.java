@@ -16,6 +16,10 @@ public class Simple {
     String password;
 
     public static void main(String[] args) {
+        //Disable JVM DNS caching.
+        java.security.Security.setProperty("networkaddress.cache.ttl" , "0");
+        java.security.Security.setProperty("networkaddress.cache.negative.ttl", "0");
+
         if (!(args.length == 2 || args.length == 3)) {
             System.out.println("Usage: host port password");
             System.exit(1);
