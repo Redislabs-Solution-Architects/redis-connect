@@ -14,7 +14,7 @@
 * N/C : Not researched or checked
 ## Comments/ToDO
 Main ruby library. Excellent examples.
-ToDo: verify hosts manually for sentinal/cluster TLS 
+ToDo: Add hook to verify IP's manually for sentinal/cluster TLS 
 
 ## Prerequisite
 Install Ruby https://www.ruby-lang.org/en/documentation/installation/

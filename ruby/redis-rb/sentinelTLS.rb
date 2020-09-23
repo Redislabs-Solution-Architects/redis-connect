@@ -16,7 +16,9 @@ begin
         :ca_file => "../../testscripts/tls/ca_cert.pem",
         :cert    => OpenSSL::X509::Certificate.new(File.read("../../testscripts/tls/db_cert.pem")),
         :key     => OpenSSL::PKey::RSA.new(File.read("../../testscripts/tls/db_key.pem")),
-        :verify_mode => OpenSSL::SSL::VERIFY_NONE
+        :verify_mode => OpenSSL::SSL::VERIFY_PEER,
+        :verify_hostname => false
+
       })
     print "Set: ", redis.set("foo", "bar")
     puts
