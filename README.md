@@ -43,6 +43,8 @@ Samples are tested with
 
 # TODO
 * Samples for TLS (2 way)
+* Verify certificates or review to provide protection for [MITM](https://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf) 
 * Example blocking operation if supported
 * Pub/Sub
 * Add Spring boot sample
+* 
