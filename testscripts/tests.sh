@@ -55,6 +55,12 @@ java -cp target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.samp
 java -cp target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.Sentinel $SENTINEL_P
 java -cp target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.Cluster $CLUSTER
 java -cp target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.Cluster $CLUSTER_P
+java -cp ./target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.SimpleTLS $SIMPLE_TLS
+java -cp ./target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.SimpleTLS $SIMPLE_P_TLS
+java -cp ./target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.SentinelTLS $SENTINEL_TLS
+java -cp ./target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.SentinelTLS $SENTINEL_P_TLS
+java -cp ./target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.ClusterTLS $CLUSTER_TLS
+java -cp ./target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.ClusterTLS $CLUSTER_P_TLS
 
 #python redis-py
 cd $REPO_LOCATION/python/redispy
