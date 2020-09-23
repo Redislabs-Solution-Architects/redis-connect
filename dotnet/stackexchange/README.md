@@ -8,15 +8,16 @@
 |     | Simple | Sentinel| Cluster|
 |:--- |:---:   |:---:    |:---:   |
 |     | Y      | Y       | Y      |
-| TLS | N/C    | N/C     | N/C    | 
+| TLS | Y      | Y       | Y      | 
 
 * N/A : Not Available
 * N/C : Not researched or checked
 
-## Comments
+## Comments/Gotchas
 Major OSS .Net library
 * Simple and Cluster client are same
 * Does not support blocking operation and wait commands
+* ToDo: change certificate verification code and provide example
 
 ## Prerequisite
 
@@ -41,7 +42,7 @@ dotnet run sentinelhost sentinelport service password
 ```
 
 ### Simple/Cluster TLS
-Change the location for PFX file and password in code. for oneway TLS comment out the certificate line
+Change the location of PFX file and password in code. For oneway TLS comment out the certificate line
 
 cd simpletls
 ```
@@ -50,7 +51,7 @@ dotnet run host port password
 ```
 
 ### Sentinel TLS
-Change the location for PFX file and password in code. for oneway TLS comment out the certificate line. Note for Discovery service the sample also use TLS
+Change the location of PFX file and password in code. For oneway TLS comment out the certificate line. Note for Discovery service the sample also uses TLS
 
 cd sentineltls
 ```
