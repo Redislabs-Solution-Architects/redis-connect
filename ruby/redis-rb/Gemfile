@@ -1,2 +1,2 @@
-source 'https://rubygems.org'
-gem 'redis', '~> 4.2', '>= 4.2.2'
+source "https://rubygems.org"
+gem "redis", "~> 4.2", ">= 4.2.2"
