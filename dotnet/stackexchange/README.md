@@ -17,7 +17,6 @@
 Major OSS .Net library
 * Simple and Cluster client are same
 * Does not support blocking operation and wait commands
-* ToDo: change certificate verification code and provide example
 
 ## Prerequisite
 

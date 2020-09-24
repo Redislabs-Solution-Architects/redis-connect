@@ -1,7 +1,6 @@
 ﻿using System;
 using StackExchange.Redis;
 using System.Security.Cryptography.X509Certificates;
-using System.Net.Security;
 
 namespace sentineltls
 {
@@ -49,7 +48,11 @@ namespace sentineltls
              */
             configuration.CertificateValidation += (sender, cert, chain, errors) =>
                 {
-                    Console.WriteLine("sentinel certificate validation errors:" + errors);
+                    Console.WriteLine("errors: " + errors);
+                    foreach (var c in chain.ChainElements)
+                    {
+                        Console.WriteLine(c.Certificate.GetNameInfo(X509NameType.SimpleName, false));
+                    }
                     return true;
                 };
 
@@ -69,7 +72,11 @@ namespace sentineltls
              */
             masterConfig.CertificateValidation += (sender, cert, chain, errors) =>
                 {
-                    Console.WriteLine(" db certificate errors: " + errors);
+                    Console.WriteLine("errors: " + errors);
+                    foreach (var c in chain.ChainElements)
+                    {
+                        Console.WriteLine(c.Certificate.GetNameInfo(X509NameType.SimpleName, false));
+                    }
                     return true;
                 };
             //For mTLS aka 2 way TLS provide the client certificate for authentication. Note PFX file must have password.
