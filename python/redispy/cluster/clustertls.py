@@ -23,6 +23,7 @@ def main():
         ssl_certfile="../../../testscripts/tls/db_cert.pem",
         ssl_cert_reqs="required",
         ssl_ca_certs="../../../testscripts/tls/ca_cert.pem",
+        #ssl_check_hostname=False, This option is not supported yet
     )
     print("Connected to Redis")
     print("Set: {}".format(rc.set("foo", "bar")))
