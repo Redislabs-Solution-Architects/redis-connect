@@ -60,8 +60,8 @@ public class ClusterTLS {
         //Or use the above via SAN certificates
         HostnameVerifier allHostsValid = new HostnameVerifier() {
             public boolean verify(String hostname, SSLSession session) {
-                System.out.println("Hostname " + hostname );
-                System.out.println("PeerHost " + session.getPeerHost());
+                /*System.out.println("Hostname " + hostname );
+                System.out.println("PeerHost " + session.getPeerHost());*/
                 return true;
             }
         };
