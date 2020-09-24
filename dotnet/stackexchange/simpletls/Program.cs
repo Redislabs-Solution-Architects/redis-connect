@@ -38,11 +38,11 @@ namespace simpletls
             */
             config.CertificateValidation += (sender, cert, chain, errors) =>
               {
-                  Console.WriteLine("errors: " + errors);
+                  /*Console.WriteLine("errors: " + errors);
                   foreach (var c in chain.ChainElements)
                   {
                       Console.WriteLine(c.Certificate.GetNameInfo(X509NameType.SimpleName, false));
-                  }
+                  }*/
 
                   return true;
               };
