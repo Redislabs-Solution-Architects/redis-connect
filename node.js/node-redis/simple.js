@@ -5,8 +5,6 @@ if (!(process.argv.length === 4 || process.argv.length === 5)) {
   process.exit(1)
 }
 const redis = require("redis");
-const { argv } = require("process");
-const { isNull } = require("util");
 var host = process.argv[2];
 var port = process.argv[3];
 var password = undefined;
