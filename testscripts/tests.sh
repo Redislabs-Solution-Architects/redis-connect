@@ -156,7 +156,7 @@ npm install
 node simple.js $SIMPLE
 node simple.js $SIMPLE_P
 
-#C++ redisplusplus
+#C++ redisplusplus if hiredis and redisplusplus compiled without TLS support
 cd $REPO_LOCATION/cplusplus/redisplusplus
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 g++ -std=c++11 -o simple  simple.cpp -lredis++ -lhiredis -pthread
@@ -168,6 +168,27 @@ g++ -std=c++11 -o sentinel  sentinel.cpp -lredis++ -lhiredis -pthread
 g++ -std=c++11 -o cluster  cluster.cpp -lredis++ -lhiredis -pthread
 ./cluster $CLUSTER
 ./cluster $CLUSTER_P
+
+# If hireis and redisplusplus is compiled with TLS  use these commands
+# g++ -std=c++11 -o simple  simple.cpp -lredis++ -lhiredis -lhiredis_ssl -pthread
+# ./simple $SIMPLE
+# ./simple $SIMPLE_P
+# g++ -std=c++11 -o sentinel  sentinel.cpp -lredis++ -lhiredis -lhiredis_ssl -pthread
+# ./sentinel $SENTINEL
+# ./sentinel $SENTINEL_P
+# g++ -std=c++11 -o cluster  cluster.cpp -lredis++ -lhiredis -lhiredis_ssl -pthread
+# ./cluster $CLUSTER
+# ./cluster $CLUSTER_P
+# g++ -std=c++11 -o simpletls  simpletls.cpp -lredis++ -lhiredis -lhiredis_ssl -pthread
+# ./simpletls $SIMPLE_TLS
+# ./simpletls $SIMPLE_P_TLS
+# g++ -std=c++11 -o sentineltls  sentineltls.cpp -lredis++ -lhiredis -lhiredis_ssl -pthread
+# ./sentineltls $SENTINEL_TLS
+# ./sentineltls $SENTINEL_P_TLS
+# g++ -std=c++11 -o clustertls  clustertls.cpp -lredis++ -lhiredis -lhiredis_ssl -pthread
+# ./clustertls $CLUSTER_TLS
+# ./clustertls $CLUSTER_P_TLS
+
 
 #ruby redis-rb
 cd $REPO_LOCATION/ruby/redis-rb
