@@ -16,7 +16,7 @@ var tlsOpts = {
     key: fs.readFileSync('../../testscripts/tls/db_key.pem'),
     cert: fs.readFileSync('../../testscripts/tls/db_cert.pem'),
     ca: [fs.readFileSync('../../testscripts/tls/ca_cert.pem')],
-    enableTrace: true,
+    //enableTrace: true,
     checkServerIdentity: (hostname, cert) => {return null;}, //return null if you do not want to verify hostname
 };
 var redis = new Redis({

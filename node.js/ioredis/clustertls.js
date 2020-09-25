@@ -18,7 +18,7 @@ var tlsOpts = {
     cert: fs.readFileSync('../../testscripts/tls/db_cert.pem'),
     ca: [fs.readFileSync('../../testscripts/tls/ca_cert.pem')],
     //enableTrace: true,
-    checkServerIdentity: (hostname, cert) => {return null;}, //return null if you do not want to verify hostname
+    scheckServerIdentity: (hostname, cert) => { return undefined; }, //return null if you do not want to verify hostname
 };
 var cluster = new Redis.Cluster([{
     host: host,
@@ -26,7 +26,7 @@ var cluster = new Redis.Cluster([{
 } /*you can more nodes here*/], {
     redisOptions: {
         password: password,
-        tls:tlsOpts
+        tls: tlsOpts
     }
 
 });
@@ -48,6 +48,6 @@ cluster.get("foo").then(function (result) {
 });
 
 //quit after a second
-/*setTimeout(function () {
+setTimeout(function () {
     cluster.quit()
-}, 1000);*/
+}, 1000);

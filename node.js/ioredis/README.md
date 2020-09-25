@@ -1,7 +1,7 @@
 
 # Node.js ioredis
 * Library: https://github.com/luin/ioredis
-* Library version : 4.17.3
+* Library version : 4.18
 * Runtime Version: node.js v12.18.3
 * RS version: 6.0.6-35
 * OSS Redis: 6.0.6 
@@ -9,12 +9,15 @@
 |     | Simple | Sentinel| Cluster|
 |:--- |:---:   |:---:    |:---:   |
 |     | Y      | Y       | Y      |
-| TLS | N/C    | N/C     | N/C    | 
+| TLS | Y*     | Y*      | N/C    | 
 
 * N/A : Not Available
 * N/C : Not researched or checked
-## Comments
-Well documented , well liked library.
+## Comments/Gotchas
+* Well documented , well liked library.
+* TLS support is extremely fragile. SimpleTLS on connection close throws and exception. 4.17.3 sentinel TLS and cluster TLS were not working. In 4.18.0 sentinel TLS works , cluster TLS still does not work.
+
+
 
 ## Prerequisite
 Download and install Node.js https://nodejs.org/en/download/ 

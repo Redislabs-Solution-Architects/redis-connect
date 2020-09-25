@@ -29,8 +29,11 @@ var redis = new Redis({
         host: sentinelHost,
         port: sentinelPort
     }], //you can add more sentinels here
-    //enableTLSForSentinelMode: true,
-    //sentinelTLS : { ca: [fs.readFileSync('../../testscripts/tls/ca_cert.pem')]},
+    enableTLSForSentinelMode: true,
+    sentinelTLS: {
+        ca: [fs.readFileSync('../../testscripts/tls/ca_cert.pem')],
+        checkServerIdentity: (hostname, cert) => { return null; }
+    },
     name: service,
     password: password,
     tls: tlsOpts,
@@ -53,4 +56,4 @@ redis.get("foo").then(function (result) {
     console.log("GET:", result);
 });
 //close connection
-redis.quit()
+setTimeout(function () { redis.quit() }, 3000);
