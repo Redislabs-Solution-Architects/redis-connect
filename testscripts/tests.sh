@@ -1,5 +1,9 @@
 #!/bin/bash
-set -x 
+#set -x 
+log() {
+  echo "$(tput setaf 1)${1}$(tput sgr0)"  
+}
+
 #Jedis
 cd $REPO_LOCATION/java/jedis
 ./mvnw clean package
@@ -16,7 +20,6 @@ java -cp ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar \
     -Djavax.net.ssl.trustStoreType=jks \
     -Djavax.net.ssl.trustStore=../../testscripts/tls/sample_ca_truststore.jks \
     -Djavax.net.ssl.trustStorePassword=${BUNDLE_PASSWORD} \
-    -Djavax.net.debug=ssl \
     com.rl.sample.jedis.SimpleTLS $SIMPLE_TLS
 java -cp ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar \
     -Djavax.net.ssl.keyStoreType=pkcs12 \
@@ -25,7 +28,6 @@ java -cp ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar \
     -Djavax.net.ssl.trustStoreType=jks \
     -Djavax.net.ssl.trustStore=../../testscripts/tls/sample_ca_truststore.jks \
     -Djavax.net.ssl.trustStorePassword=${BUNDLE_PASSWORD} \
-    -Djavax.net.debug=ssl \
     com.rl.sample.jedis.SimpleTLS $SIMPLE_P_TLS
 java -cp ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar \
     -Djavax.net.ssl.keyStoreType=pkcs12 \
@@ -34,7 +36,6 @@ java -cp ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar \
     -Djavax.net.ssl.trustStoreType=jks \
     -Djavax.net.ssl.trustStore=../../testscripts/tls/sample_ca_truststore.jks \
     -Djavax.net.ssl.trustStorePassword=${BUNDLE_PASSWORD} \
-    -Djavax.net.debug=ssl \
     com.rl.sample.jedis.ClusterTLS $CLUSTER_TLS
 java -cp ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar \
     -Djavax.net.ssl.keyStoreType=pkcs12 \
@@ -43,7 +44,6 @@ java -cp ./target/jedissample-1.0-SNAPSHOT-jar-with-dependencies.jar \
     -Djavax.net.ssl.trustStoreType=jks \
     -Djavax.net.ssl.trustStore=../../testscripts/tls/sample_ca_truststore.jks \
     -Djavax.net.ssl.trustStorePassword=${BUNDLE_PASSWORD} \
-    -Djavax.net.debug=ssl \
     com.rl.sample.jedis.ClusterTLS $CLUSTER_P_TLS
 
 #Lettuce
@@ -156,9 +156,10 @@ npm install
 node simple.js $SIMPLE
 node simple.js $SIMPLE_P
 
-#C++ redisplusplus if hiredis and redisplusplus compiled without TLS support
+#redisplusplus
 cd $REPO_LOCATION/cplusplus/redisplusplus
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+#C++ redisplusplus if hiredis and redisplusplus compiled without TLS support
 g++ -std=c++11 -o simple  simple.cpp -lredis++ -lhiredis -pthread
 ./simple $SIMPLE
 ./simple $SIMPLE_P
@@ -192,6 +193,7 @@ g++ -std=c++11 -o cluster  cluster.cpp -lredis++ -lhiredis -pthread
 
 #ruby redis-rb
 cd $REPO_LOCATION/ruby/redis-rb
+bundle
 ruby simple.rb $SIMPLE
 ruby simple.rb $SIMPLE_P
 ruby sentinel.rb $SENTINEL
