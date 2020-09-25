@@ -155,6 +155,8 @@ cd $REPO_LOCATION/node.js/node-redis
 npm install
 node simple.js $SIMPLE
 node simple.js $SIMPLE_P
+node simpletls.js $SIMPLE_TLS
+node simpletls.js $SIMPLE_P_TLS
 
 #redisplusplus
 cd $REPO_LOCATION/cplusplus/redisplusplus

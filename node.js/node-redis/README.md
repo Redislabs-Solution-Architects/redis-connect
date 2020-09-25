@@ -8,7 +8,7 @@
 |     | Simple | Sentinel| Cluster|
 |:--- |:---:   |:---:    |:---:   |
 |     | Y      | N/A     | N/A    |
-| TLS | N/C    | N/C     | N/C    | 
+| TLS | Y      | N/A     | N/A    | 
 
 * N/A : Not Available
 * N/C : Not researched or checked
@@ -29,3 +29,6 @@ Password is optional for all samples
 
 ### Simple
 `node simple.js host port password`
+
+### Simple TLS
+`node simpletls.js host port password`
