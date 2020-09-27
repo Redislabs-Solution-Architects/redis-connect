@@ -1,3 +1,10 @@
+#!/bin/bash
+echo " ____  ____  ____  ____  ___  _____ ";
+echo "(  _ \( ___)(  _ \(_  _)/ __)(  _  )";
+echo " )   / )__)  )(_) )_)(_( (_-. )(_)( ";
+echo "(_)\_)(____)(____/(____)\___/(_____)";
+echo 
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source ${DIR}/../../testscripts/env.sh
 

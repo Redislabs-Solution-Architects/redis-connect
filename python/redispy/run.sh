@@ -1,4 +1,10 @@
 #!/bin/bash
+
+echo "   _   _   _   _   _   _   _  ";
+echo "  / \ / \ / \ / \ / \ / \ / \ ";
+echo " ( r | e | d | i | s | p | y )";
+echo "  \_/ \_/ \_/ \_/ \_/ \_/ \_/ ";
+echo
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source ${DIR}/../../testscripts/env.sh
 
