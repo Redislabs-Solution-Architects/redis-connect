@@ -18,7 +18,7 @@ In each example
 Samples are tested with
 
 | Library                                               | OSS Redis| Redis Enterprise  | Notes               |
-| ---------------------------------------------         |:----:|:---:|:--------------------|
+| ---------------------------------------------         |:----:    |:---:              |:--------------------|
 | [Java Jedis](java/jedis/README.md)                    | Y    | Y   | No TLS sentinel support    | |
 | [Java Lettuce](java/lettuce/README.md)                | Y    | Y   |     | |
 | [.Net StackExchange](dotnet/stackexchange/README.md)  | Y    | Y   |Sentinel does not work with 2.1.58 for RS use 2.1.30| |
@@ -28,7 +28,7 @@ Samples are tested with
 | [golang go-redis](golang/go-redis/README.md)          | Y    | Y   |Sentinel for a db with password does not work| |
 | [golang redigo](golang/redigo/README.md)              | Y    | Y   |     | |
 | [C++ redisplusplus](cplusplus/redisplusplus/README.md)| Y    | Y   |     | |
-| [ruby ruby-rb](ruby/redis-rb/README.md)               | Y    | N   |     | |
+| [ruby ruby-rb](ruby/redis-rb/README.md)               | Y    | Y   |     | |
 
 
 # Assumptions

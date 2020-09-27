@@ -8,7 +8,7 @@
 |     | Simple | Sentinel| Cluster|
 |:--- |:---:   |:---:    |:---:   |
 |     | Y      | Y       | Y*     |
-| TLS | Y      | Y       | Y*    | 
+| TLS | Y      | Y       | Y*     | 
 * N/A : Not Available
 * N/C : Not researched or checked
 
