@@ -5,22 +5,22 @@ The test script assumes that you have setup the environment for each programming
 **Important** `cd testscripts` as all scripts use relative path from this directory
 
 # Setup the environment
-In a shell setup the environment. Edit the file change accordingly to your RS cluster. **All scripts use these environment varialbls**
+Copy `env_template.sh` to `env.sh` and setup the environment variables for your RS cluster. **All scripts use these environment varialbls**
 ```
-. ./rs_env.sh
+source ./env.sh
 ```
 
 # Generate TLS Certificates
 Run the script to create TLS certificates
 ```
-. ./tlsgen.sh
+./tlsgen.sh
 ```
 # Setup RS
 
 ## setup
 ```
  python3 -m venv venv
- . venv/bin/activate
+ source venv/bin/activate
 ```
 
 Install the dependencies
@@ -42,7 +42,7 @@ deactivate
 ```
  # Run the tests
  ```
- . ./test.sh
+ ./tests.sh
  ```
 
 
