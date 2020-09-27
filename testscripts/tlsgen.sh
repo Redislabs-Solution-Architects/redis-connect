@@ -38,6 +38,7 @@ intermediate_ca(){
         -subj '/O=Redis Labs/CN=RL Intermediate Certificate Authority' \
         -out tls/ca_cert.pem
     printf "** Creating Java trust store\n\n"
+    rm tls/sample_ca_truststore.jks
     keytool -import -noprompt -file tls/ca_cert.pem -alias ca_cert  -keystore tls/sample_ca_truststore.jks -storepass ${BUNDLE_PASSWORD}
   
 }
