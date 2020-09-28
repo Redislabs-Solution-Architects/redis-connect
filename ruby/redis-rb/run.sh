@@ -1,3 +1,14 @@
+#!/bin/bash
+
+echo " ____ ____ ____ ____ ____ ____ ____ ____ ";
+echo "||r |||e |||d |||i |||s |||- |||r |||b ||";
+echo "||__|||__|||__|||__|||__|||__|||__|||__||";
+echo "|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|";
+echo "                                         ";
+echo "                                         ";
+echo "                                         ";
+echo "                                         ";
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source ${DIR}/../../testscripts/env.sh
 
