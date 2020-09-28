@@ -25,7 +25,7 @@ Samples are tested with
 | [Python redispy](python/redispy/README.md)            | Y    | Y   |     | |
 | [Node.js ioredis](node.js/ioredis/README.md)          | Y    | Y   |     | |
 | [Node.js noderedis](node.js/node-redis/README.md)     | Y    | Y   |     | |
-| [golang go-redis](golang/go-redis/README.md)          | Y    | Y   |Sentinel for a db with password does not work| |
+| [golang go-redis](golang/go-redis/README.md)          | Y    | Y   |Sentinel with TLS does not work| |
 | [golang redigo](golang/redigo/README.md)              | Y    | Y   |     | |
 | [C++ redisplusplus](cplusplus/redisplusplus/README.md)| Y    | Y   |     | |
 | [ruby ruby-rb](ruby/redis-rb/README.md)               | Y    | Y   |     | |
@@ -42,7 +42,6 @@ Samples are tested with
 
 
 # TODO
-* Samples for TLS (2 way)
 * Verify certificates or review to provide protection for [MITM](https://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf) 
 * Example blocking operation if supported
 * Pub/Sub
