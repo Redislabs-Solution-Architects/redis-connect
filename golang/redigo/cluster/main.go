@@ -49,9 +49,9 @@ func newPool(nodes []string, password string) (*redis.Cluster, error) {
 	return redis.NewCluster(
 		&redis.Options{
 			StartNodes:   nodes,
-			ConnTimeout:  50 * time.Millisecond,
-			ReadTimeout:  50 * time.Millisecond,
-			WriteTimeout: 50 * time.Millisecond,
+			ConnTimeout:  1000 * time.Millisecond,
+			ReadTimeout:  1000 * time.Millisecond,
+			WriteTimeout: 1000 * time.Millisecond,
 			KeepAlive:    16,
 			AliveTime:    60 * time.Second,
 			Password:     password,

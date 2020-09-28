@@ -1,4 +1,4 @@
-module simple
+module simpletls
 
 go 1.14
 

@@ -1,7 +1,10 @@
 package main
 
 import (
+	"crypto/tls"
+	"crypto/x509"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"os"
 	"time"
@@ -43,11 +46,34 @@ func main() {
 }
 
 func newPool(addr string, password string) *redis.Pool {
+	//create the ca certs pool to trust our ca
+	caCert, err := ioutil.ReadFile("../../../testscripts/tls/ca_cert.pem")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	caCertPool := x509.NewCertPool()
+	caCertPool.AppendCertsFromPEM(caCert)
+
+	//load the client certificates
+	cert, err := tls.LoadX509KeyPair("../../../testscripts/tls/db_cert.pem", "../../../testscripts/tls/db_key.pem")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	cfg := &tls.Config{
+		Certificates: []tls.Certificate{cert},
+		RootCAs:      caCertPool,
+	}
+
 	return &redis.Pool{
 		MaxIdle:     3,
 		IdleTimeout: 240 * time.Second,
 
 		Dial: func() (redis.Conn, error) {
-			return redis.Dial("tcp", addr, redis.DialPassword(password))
+			return redis.Dial("tcp", addr,
+				redis.DialPassword(password),
+				redis.DialUseTLS(true),
+				redis.DialTLSConfig(cfg))
 		}}
 }

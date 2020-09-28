@@ -1,6 +1,6 @@
 # golang redigo
 * Library: https://github.com/gomodule/redigo
-* Library version : v1.8.2
+* Library version : v2.0.0
 * Runtime Version: go 1.14
 * RS version: 6.0.6-35
 * OSS Redis: 6.0.6
@@ -8,7 +8,7 @@
 |     | Simple | Sentinel| Cluster|
 |:--- |:---:   |:---:    |:---:   |
 |     | Y      | N*      | N*     |
-| TLS | N/C    | N/C     | N/C    | 
+| TLS | Y      | N/C     | N/C    | 
 
 > *Sentinel and cluster are supported by 2 extensions that seem to be abandoned. Samples here are just for completeness
 
@@ -34,9 +34,17 @@ cd redigo/simple
 ```
 go build
 ./simple host port password
+```
+
+### Simple TLS
+cd redigo/simpletls
+
+```
+go build
+./simpletls host port password
 ``` 
 
-### Sentinel (caution)
+### Sentinel (Caution)
 Uses abandoned extension https://github.com/FZambia/sentinel 
 
 cd redigo/sentinel
@@ -46,7 +54,7 @@ go build
 ./sentinel sentinelhost sentinelport service password
 ``` 
 
-### Cluster(caution)
+### Cluster(Caution)
 Uses [PR](https://github.com/wuxibin89/redis-go-cluster/pull/31) for abandoned extension for password support https://github.com/wuxibin89/redis-go-cluster 
 
 cd redigo/cluster
