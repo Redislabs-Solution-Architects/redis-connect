@@ -31,14 +31,23 @@ Samples are tested with
 | [ruby ruby-rb](ruby/redis-rb/README.md)               | Y    | Y   |     | |
 
 
-# Assumptions
-* When writing readme.md assume user can follow instructions but is not familiar with the language or eco system
+# Contribution
+* Clone , change , test and commit
+* If you find any improvement e.g better language idioms, better way to do things , please change and commit 
+* If you have tested with a new version of the library, just test, update the readme and commit
+
+
+# When Adding new Library
+* When writing README.md assume user can follow instructions but is not familiar with the language or eco system
 * Use minimal dependencies. 
+* For  consistency follow the pattern of other samples 
 * Prefer simplicity over advanced language features
-* Single file should execute, have minimal code and, should be able to share the single file as an example.
-* Prefer copy/paste over reuse of code across sample files
-* Use connection pooling where the library supports it. As this is the most common scenario for a production examples 
+* Single file should execute, have minimal code and, you should be able to share the single file as an example.
+* Prefer copy/paste over reuse of code across sample files 
+* Use connection pooling where the client library supports it. As this is the most common scenario for a production examples 
 * TLS samples are only tested with RS
+* For TLS do the sample for 2-way SSL. If verification hook e.g `verifyhostname` is available provide empty implementation(**discuss**)
+
 
 
 # TODO
@@ -46,4 +55,3 @@ Samples are tested with
 * Example blocking operation if supported
 * Pub/Sub
 * Add Spring boot sample
-* 

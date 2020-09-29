@@ -12,7 +12,7 @@
 
 * N/A : Not Available
 * N/C : Not researched or checked
-## Comments
+## Comments/Gotchas
 
 ## Prerequisite
 
@@ -26,4 +26,10 @@ Password is optional for all samples
 ### Sentinel 
 
 ### Cluster
+
+### Simple TLS
+
+### Sentinel TLS
+
+### Cluster TLS
 
