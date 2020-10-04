@@ -41,7 +41,7 @@ Samples are tested with
 
 
 # When Adding new Library
-* When writing README.md assume user can follow instructions but is not familiar with the language or eco system
+* When writing README.md assume user can follow instructions but is not familiar with the language or eco system. [Template](README_lib_template.md) is availble  
 * Use minimal dependencies. 
 * For  consistency follow the pattern of other samples 
 * Prefer simplicity over advanced language features
