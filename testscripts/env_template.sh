@@ -1,5 +1,4 @@
-#repo location on local file system
-export REPO_LOCATION=root/redisconnect
+#!/bin/bash
 #RS cluster
 export CLUSTER_FQDN="example.demo.redislabs.com"
 export CLUSTER_USER="example@redislabs.com"
@@ -8,9 +7,10 @@ export CLUSTER_PASSWORD="clusterpassowrd"
 export NODE_IP=37.227.88.254
 #password for databases
 export DB_PASSWORD="mh2Y6FqDRz"
-# used for JKS and PFX cert bundles. if changed you will also need to change in sample files
+# used for JKS and PFX cert bundles in java and dotnet. if changed you will also need to change in sample files
 export BUNDLE_PASSWORD="A4TVrVCHg8Ztm" 
 
+# No need to change these values
 export SIMPLE="redis-10001.${CLUSTER_FQDN} 10001"
 export SIMPLE_P="redis-10002.${CLUSTER_FQDN} 10002 ${DB_PASSWORD}"
 export SENTINEL="${NODE_IP} 8001 simple"

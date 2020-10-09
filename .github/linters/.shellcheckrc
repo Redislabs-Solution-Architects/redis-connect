@@ -1,0 +1,8 @@
+# Can't follow non-constant source. Use a directive to specify location
+disable=SC1090
+# Want to escape a single quote? 
+disable=SC1003
+# Double quote to prevent globbing and word splitting
+disable=SC2086
+# Don't use variables in the printf format string
+disable=SC2059

@@ -6,7 +6,7 @@ run() {
     #execute the command
      ./"$(basename "${1}")"
      #move back 
-    cd ${DIR} 
+    cd "${DIR}"
 }
 
 run ../java/jedis/run.sh

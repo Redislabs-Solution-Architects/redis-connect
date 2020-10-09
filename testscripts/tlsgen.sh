@@ -40,7 +40,6 @@ intermediate_ca(){
     printf "** Creating Java trust store\n\n"
     rm tls/sample_ca_truststore.jks
     keytool -import -noprompt -file tls/ca_cert.pem -alias ca_cert  -keystore tls/sample_ca_truststore.jks -storepass ${BUNDLE_PASSWORD}
-  
 }
 
 # Signature Algorithm: sha256WithRSAEncryption
@@ -125,8 +124,6 @@ EOF
     #create PFX bundle for .Net
     printf "** Creating DB PFX/pkscs12 bundle for java and .Net\n\n"
     openssl pkcs12 -export -in tls/${port}_cert.pem  -inkey tls/${port}_key.pem -certfile tls/ca_cert.pem -passout pass:${BUNDLE_PASSWORD} -out tls/${port}_cert.pfx
-
-    # ToDo create JKS for Java
 }
 
 

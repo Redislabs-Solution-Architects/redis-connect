@@ -7,7 +7,8 @@ echo ")_()_( \____/ /___/ )___(        |_()_\ )___( /___/ )_____()____) ";
 echo "                                                                  ";
 echo
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-source ${DIR}/../../testscripts/env.sh
+
+source "${DIR}"/../../testscripts/env.sh
 
 npm install
 printf "\nSimple....\n"
