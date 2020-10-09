@@ -1,19 +1,20 @@
 package com.rl.sample.jedis;
 
-import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
-import redis.clients.jedis.*;
+import redis.clients.jedis.HostAndPort;
+import redis.clients.jedis.JedisCluster;
+import redis.clients.jedis.JedisPoolConfig;
+import redis.clients.jedis.Protocol;
 
 import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLParameters;
 import javax.net.ssl.SSLSession;
 import java.util.HashSet;
 import java.util.Set;
 
 
 public class ClusterTLS {
-    String host;
-    int port;
-    String password;
+    private String host;
+    private int port;
+    private String password;
 
     public static void main(String[] args) {
         if (!(args.length == 2 || args.length == 3)) {

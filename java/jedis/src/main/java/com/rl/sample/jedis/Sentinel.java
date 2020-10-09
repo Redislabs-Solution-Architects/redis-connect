@@ -6,10 +6,10 @@ import redis.clients.jedis.JedisSentinelPool;
 import java.util.HashSet;
 
 public class Sentinel {
-    String host;
-    int port;
-    String password;
-    String service;
+    private String host;
+    private int port;
+    private String password;
+    private String service;
 
 
     public static void main(String[] args) {
@@ -38,7 +38,7 @@ public class Sentinel {
 
 
     private JedisSentinelPool getPool() {
-        HashSet sentinels = new HashSet<String>();
+        HashSet<String> sentinels = new HashSet<>();
         //You can add more sentinels here
         sentinels.add(host + ":" + port);
         return new JedisSentinelPool(service, sentinels, password);

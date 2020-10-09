@@ -20,9 +20,9 @@ public class SimpleTLS {
     final static String KEY_STORE = "../../testscripts/tls/db_cert.pfx";
     final static String KEY_STORE_PASSWORD = "A4TVrVCHg8Ztm";
 
-    String host;
-    int port;
-    String password;
+    private String host;
+    private int port;
+    private String password;
 
     public static void main(String[] args) {
         //Disable JVM DNS caching.

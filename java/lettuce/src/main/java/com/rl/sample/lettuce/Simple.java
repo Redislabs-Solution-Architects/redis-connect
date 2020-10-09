@@ -11,9 +11,9 @@ import io.lettuce.core.api.sync.RedisCommands;
  * Lettuce example
  */
 public class Simple {
-    String host;
-    int port;
-    String password;
+    private String host;
+    private int port;
+    private String password;
 
     public static void main(String[] args) {
         //Disable JVM DNS caching.

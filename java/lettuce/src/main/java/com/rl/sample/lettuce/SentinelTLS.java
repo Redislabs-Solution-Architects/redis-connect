@@ -11,15 +11,15 @@ import io.lettuce.core.api.sync.RedisCommands;
 import java.io.File;
 
 public class SentinelTLS {
-    final static String TRUST_STORE = "../../testscripts/tls/sample_ca_truststore.jks";
-    final static String TRUST_STORE_PASSWORD = "A4TVrVCHg8Ztm";
-    final static String KEY_STORE = "../../testscripts/tls/db_cert.pfx";
-    final static String KEY_STORE_PASSWORD = "A4TVrVCHg8Ztm";
+    static final String TRUST_STORE = "../../testscripts/tls/sample_ca_truststore.jks";
+    static final String TRUST_STORE_PASSWORD = "A4TVrVCHg8Ztm";
+    static final String KEY_STORE = "../../testscripts/tls/db_cert.pfx";
+    static final String KEY_STORE_PASSWORD = "A4TVrVCHg8Ztm";
 
-    String host;
-    int port;
-    String password;
-    String service;
+    private String host;
+    private int port;
+    private String password;
+    private String service;
 
     public static void main(String[] args) {
         if (!(args.length == 3 || args.length == 4)) {

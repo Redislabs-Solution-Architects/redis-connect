@@ -9,9 +9,9 @@ import io.lettuce.core.cluster.api.sync.RedisAdvancedClusterCommands;
 import java.util.Arrays;
 
 public class Cluster {
-    String host;
-    int port;
-    String password;
+    private String host;
+    private int port;
+    private String password;
 
     public static void main(String[] args) {
         if (!(args.length == 2 || args.length == 3)) {

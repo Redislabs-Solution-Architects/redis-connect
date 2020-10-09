@@ -7,10 +7,10 @@ import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.sync.RedisCommands;
 
 public class Sentinel {
-    String host;
-    int port;
-    String password;
-    String service;
+    private String host;
+    private int port;
+    private String password;
+    private String service;
 
     public static void main(String[] args) {
         if (!(args.length == 3 || args.length == 4)) {

@@ -12,14 +12,14 @@ import java.io.File;
 import java.util.Arrays;
 
 public class ClusterTLS {
-    final static String TRUST_STORE = "../../testscripts/tls/sample_ca_truststore.jks";
-    final static String TRUST_STORE_PASSWORD = "A4TVrVCHg8Ztm";
-    final static String KEY_STORE = "../../testscripts/tls/db_cert.pfx";
-    final static String KEY_STORE_PASSWORD = "A4TVrVCHg8Ztm";
+    static final String TRUST_STORE = "../../testscripts/tls/sample_ca_truststore.jks";
+    static final String TRUST_STORE_PASSWORD = "A4TVrVCHg8Ztm";
+    static final String KEY_STORE = "../../testscripts/tls/db_cert.pfx";
+    static final String KEY_STORE_PASSWORD = "A4TVrVCHg8Ztm";
 
-    String host;
-    int port;
-    String password;
+    private String host;
+    private int port;
+    private String password;
 
     public static void main(String[] args) {
         if (!(args.length == 2 || args.length == 3)) {
@@ -54,7 +54,8 @@ public class ClusterTLS {
             node1.setPassword(password);
         }
 
-        //Note Verify Peer is false. Add node IP address to SAN in certificate and then enable verify peer
+        //Note Verify Peer is false. Add node IP address to SAN in certificate and then enable
+        // verify peer
         node1.setSsl(true);
         node1.setVerifyPeer(false);
 
@@ -62,8 +63,10 @@ public class ClusterTLS {
                 .keystore(new File(KEY_STORE), KEY_STORE_PASSWORD.toCharArray())
                 .truststore(new File(TRUST_STORE), TRUST_STORE_PASSWORD)
                 .build();
-        
-        ClusterClientOptions clusterOptions = ClusterClientOptions.builder().sslOptions(sslOptions).build();
+
+        ClusterClientOptions clusterOptions = ClusterClientOptions.builder().
+                sslOptions(sslOptions).
+                build();
         RedisClusterClient client = RedisClusterClient.create(Arrays.asList(node1 /* , node2*/));
         client.setOptions(clusterOptions);
         return client;

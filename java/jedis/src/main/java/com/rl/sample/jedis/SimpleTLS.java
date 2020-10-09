@@ -12,9 +12,9 @@ import javax.net.ssl.SSLParameters;
  * Jedis Pool example with password
  */
 public class SimpleTLS {
-   String host;
-   int port;
-   String password;
+    private String host;
+    private int port;
+    private String password;
 
 
     public static void main(String[] args) {
