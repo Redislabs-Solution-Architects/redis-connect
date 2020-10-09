@@ -22,15 +22,13 @@ func main() {
 		password = os.Args[3]
 	}
 
-	//you can add more nodes here
+	// you can add more nodes here
 	nodes := []string{host + ":" + port}
-	//cluster is thread safe
+	// cluster is thread safe
 	cluster, err := newPool(nodes, password)
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	defer cluster.Close()
 
 	n, err := cluster.Do("SET", "foo", "bar")
 	if err != nil {
@@ -43,6 +41,8 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("GET:%s\n", n)
+
+	cluster.Close()
 }
 
 func newPool(nodes []string, password string) (*redis.Cluster, error) {
@@ -56,5 +56,4 @@ func newPool(nodes []string, password string) (*redis.Cluster, error) {
 			AliveTime:    60 * time.Second,
 			Password:     password,
 		})
-
 }

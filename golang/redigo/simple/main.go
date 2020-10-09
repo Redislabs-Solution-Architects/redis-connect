@@ -9,8 +9,6 @@ import (
 	"github.com/gomodule/redigo/redis"
 )
 
-var host, port, password string
-
 func main() {
 	var host, port, password string
 	if !(len(os.Args) == 3 || len(os.Args) == 4) {
@@ -24,10 +22,8 @@ func main() {
 	}
 
 	pool := newPool(host+":"+port, password)
-
-	defer pool.Close()
-
 	conn := pool.Get()
+
 	n, err := conn.Do("SET", "foo", "bar")
 	if err != nil {
 		log.Fatal(err)
@@ -39,7 +35,9 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("GET:%s\n", n)
+
 	conn.Close()
+	pool.Close()
 }
 
 func newPool(addr string, password string) *redis.Pool {

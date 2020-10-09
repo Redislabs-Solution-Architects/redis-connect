@@ -25,11 +25,9 @@ func main() {
 		password = os.Args[4]
 	}
 
-	//you can add more sentinels here
+	// you can add more sentinels here
 	sentinels := []string{sentinelHost + ":" + sentinelPort}
 	pool := newPool(sentinels, service, password)
-
-	defer pool.Close()
 
 	conn := pool.Get()
 	n, err := conn.Do("SET", "foo", "bar")
@@ -43,7 +41,9 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("GET:%s\n", n)
+
 	conn.Close()
+	pool.Close()
 }
 
 func newPool(addsr []string, service string, password string) *redis.Pool {

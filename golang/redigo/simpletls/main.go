@@ -12,8 +12,6 @@ import (
 	"github.com/gomodule/redigo/redis"
 )
 
-var host, port, password string
-
 func main() {
 	var host, port, password string
 	if !(len(os.Args) == 3 || len(os.Args) == 4) {
@@ -27,10 +25,8 @@ func main() {
 	}
 
 	pool := newPool(host+":"+port, password)
-
-	defer pool.Close()
-
 	conn := pool.Get()
+
 	n, err := conn.Do("SET", "foo", "bar")
 	if err != nil {
 		log.Fatal(err)
@@ -42,11 +38,13 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("GET:%s\n", n)
+
 	conn.Close()
+	pool.Close()
 }
 
 func newPool(addr string, password string) *redis.Pool {
-	//create the ca certs pool to trust our ca
+	// create the ca certs pool to trust our ca
 	caCert, err := ioutil.ReadFile("../../../testscripts/tls/ca_cert.pem")
 	if err != nil {
 		log.Fatal(err)
@@ -55,7 +53,7 @@ func newPool(addr string, password string) *redis.Pool {
 	caCertPool := x509.NewCertPool()
 	caCertPool.AppendCertsFromPEM(caCert)
 
-	//load the client certificates
+	// load the client certificates
 	cert, err := tls.LoadX509KeyPair("../../../testscripts/tls/db_cert.pem", "../../../testscripts/tls/db_key.pem")
 	if err != nil {
 		log.Fatal(err)

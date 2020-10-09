@@ -24,11 +24,9 @@ func main() {
 		password = os.Args[3]
 	}
 
-	//client is safe for use by multiple goroutines
+	// client is safe for use by multiple goroutines
 	r := newClient(host+":"+port, password)
-
-	defer r.Close()
-	var ctx = context.Background()
+	ctx := context.Background()
 
 	v, err := r.Set(ctx, "foo", "bar", 0).Result()
 	if err != nil {
@@ -40,8 +38,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	fmt.Printf("Get:%s\n", v)
+
+	r.Close()
 
 }
 
