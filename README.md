@@ -8,7 +8,7 @@ For each library have the following connection types
 # Overview Video
 [Overview video available on Google Drive](https://drive.google.com/file/d/1Hnx5aC5nV8ev22vvA2VjrL3GvDNka0Yp/view?usp=sharing)
 
-# Sample Program 
+# Sample Program
 In each example
 * Connect to Redis
 * simple get/set command and show output
@@ -36,25 +36,25 @@ Samples are tested with
 
 # Contribution
 * Clone , change , test and commit
-* If you find any improvement e.g better language idioms, better way to do things , please change and commit 
+* If you find any improvement e.g better language idioms, better way to do things , please change and commit
 * If you have tested with a new version of the library, just test, update the readme and commit
 
 
 # When Adding new Library
-* When writing README.md assume user can follow instructions but is not familiar with the language or eco system. [Template](README_lib_template.md) is availble  
-* Use minimal dependencies. 
-* For  consistency follow the pattern of other samples 
+* When writing README.md assume user can follow instructions but is not familiar with the language or eco system. [Template](README_lib_template.md) is available
+* Use minimal dependencies.
+* For  consistency follow the pattern of other samples
 * Prefer simplicity over advanced language features
 * Single file should execute, have minimal code and, you should be able to share the single file as an example.
-* Prefer copy/paste over reuse of code across sample files 
-* Use connection pooling where the client library supports it. As this is the most common scenario for a production examples 
+* Prefer copy/paste over reuse of code across sample files
+* Use connection pooling where the client library supports it. As this is the most common scenario for a production examples
 * TLS samples are only tested with RS
 * For TLS do the sample for 2-way SSL. If verification hook e.g `verifyhostname` is available provide empty implementation(**discuss**)
 
 
 
 # TODO
-* Verify certificates or review to provide protection for [MITM](https://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf) 
+* Verify certificates or review to provide protection for [MITM](https://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf)
 * Example blocking operation if supported
 * Pub/Sub
 * Add Spring boot sample

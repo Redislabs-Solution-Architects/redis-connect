@@ -1,6 +1,6 @@
 
 # Java Lettuce 
-* Library: Lettuce https://github.com/lettuce-io/lettuce-core
+* Library: [Lettuce](https://github.com/lettuce-io/lettuce-core)
 * Library version : 5.3.3.RELEASE
 * Runtime Version: JDK 12
 * RS version: 6.0.6-35
@@ -18,11 +18,11 @@
 * For TLS could not find hook for custom host name verifier. Had to disable host verification for sentinel and cluster
 
 ## Prerequisite
-Install Java JDK https://openjdk.java.net/install/index.html
+Install [Java JDK](https://openjdk.java.net/install/index.html)
 
 ## Setup
 cd to lettuce directory
-```
+```bash
 ./mvnw clean package
 ```
 
@@ -30,30 +30,30 @@ cd to lettuce directory
 Password is optional for all samples
 
 ### Simple
-```
+```bash
 java -cp target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.Simple host port password
 ```
 
-### Sentinel 
-```
+### Sentinel
+```bash
 java -cp target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.Sentinel sentinelhost port  service password
 ```
 
 ### Cluster
-```
+```bash
 java -cp target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.Cluster node port password 
 ```
 ### For TLS change the location of trust store and key store in code. 
 
 ### Simple TLS
-```
+```bash
 java -cp ./target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.SimpleTLS host port password
 ```
 ### Sentinel TLS
-```
+```bash
 java -cp ./target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.SentinelTLS sentinelhost port  service password
 ```
 ### Cluster TLS
-```
+```bash
 java -cp ./target/lettucesample-1.0-SNAPSHOT-jar-with-dependencies.jar com.rl.sample.lettuce.ClusterTLS node port password
 ```

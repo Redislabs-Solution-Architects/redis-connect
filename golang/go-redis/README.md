@@ -1,5 +1,5 @@
  # golang go-redis
-* Library: https://github.com/go-redis/redis 
+* Library: [go-redis](https://github.com/go-redis/redis)
 * Library version : v8.2.2
 * Runtime Version: go 1.14
 * RS version: 6.0.6-35
@@ -20,7 +20,7 @@
 * A [universal client](https://pkg.go.dev/github.com/go-redis/redis/v8?tab=doc#UniversalClient) is also available that depending on config options supports simple, sentinel and cluster
 
 ## Prerequisite
-Install golang https://golang.org/doc/install
+Install [golang](https://golang.org/doc/install)
 
 ## Setup
 use `go build` to build each sample
@@ -31,40 +31,40 @@ Password is optional for all samples
 ### Simple
 cd go-redis/simple
 
-```
+```bash
 go build
 ./simple host port password
-``` 
+```
 
 ### Sentinel 
 cd go-redis/sentinel
 
-```
+```bash
 go build
 ./sentinel sentinelhost sentinelport service password
-``` 
+```
 
 ### Cluster
 cd go-redis/cluster
 
-```
+```bash
 go build
 ./cluster host port password
-``` 
+```
 
 ### Simple TLS
 cd go-redis/simpletls
 
-```
+```bash
 go build
 ./simpletls host port password
-``` 
+```
 
 
 ### Cluster TLS
 cd go-redis/clustertls
 
-```
+```bash
 go build
 ./clustertls host port password
-``` 
+```

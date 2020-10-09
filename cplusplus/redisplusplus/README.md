@@ -1,5 +1,5 @@
 # Name  redis-plus-plus
-* Library: https://github.com/sewenew/redis-plus-plus
+* Library: [redis-plus-plus](https://github.com/sewenew/redis-plus-plus)
 * Library version : redis-plus-plus 1.2/hiredis 1.0
 * Runtime Version: C++ 11 / C++ 17
 * RS version: 6.0.6-35
@@ -30,30 +30,30 @@ Password is optional for all samples. Assuming headers and libraries during setu
 
 ### Simple
 Compile
-```
+```bash
 g++ -std=c++11 -o simple  simple.cpp -lredis++ -lhiredis -pthread
 ```
 Run
-```
+```bash
 ./simple host port password
 ```
-### Sentinel 
+### Sentinel
 Compile
-```
+```bash
 g++ -std=c++11 -o sentinel  sentinel.cpp -lredis++ -lhiredis -pthread
 ```
 Run
-```
+```bash
 ./sentinel sentinelhost sentinelport service password
 ```
 
 ### Cluster
 Compile
-```
+```bash
 g++ -std=c++11 -o cluster  cluster.cpp -lredis++ -lhiredis -pthread
 ```
 Run
-```
+```bash
 ./cluster host port password
 ```
 
@@ -65,32 +65,30 @@ Additionally when compiling with shared libraries you will need to add `-lhiredi
 
 ### Simple TLS
 Compile
-```
+```bash
 g++ -std=c++11 -o simpletls  simpletls.cpp -lredis++ -lhiredis -lhiredis_ssl -pthread
 ```
 Run
-```
+```bash
 ./simpletls ./host port password
 ```
 
 ### Sentinel TLS
 Compile
-```
+```bash
 g++ -std=c++11 -o sentineltls  sentineltls.cpp -lredis++ -lhiredis -lhiredis_ssl -pthread
 ```
 Run
-```
+```bash
 ./sentineltls sentinelhost sentinelport service password
 ```
 
 ### Cluster TLS
 Compile
-```
+```bash
 g++ -std=c++11 -o clustertls  clustertls.cpp -lredis++ -lhiredis -lhiredis_ssl -pthread
 ```
 Run
-```
+```bash
 ./clustertls host port password
 ```
-
-

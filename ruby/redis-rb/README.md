@@ -1,5 +1,5 @@
  # Ruby redis-rb
-* Library: redis-rb https://github.com/redis/redis-rb
+* Library: [redis-rb](https://github.com/redis/redis-rb)
 * Library version : 4.2.2
 * Runtime Version: 2.7.1
 * RS version: 6.0.6-35
@@ -8,16 +8,16 @@
 |     | Simple | Sentinel| Cluster|
 |:--- |:---:   |:---:    |:---:   |
 |     | Y      | Y       | Y      |
-| TLS | Y      | Y       | Y      | 
+| TLS | Y      | Y       | Y      |
 
 * N/A : Not Available
 * N/C : Not researched or checked
 ## Comments/ToDO
 Main ruby library. Excellent examples.
-ToDo: Add hook to verify IP's manually for sentinal/cluster TLS 
+ToDo: Add hook to verify IP's manually for sentinel/cluster TLS
 
 ## Prerequisite
-Install Ruby https://www.ruby-lang.org/en/documentation/installation/
+Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
 On MacOS you need root permission to install gems if when using Apple bundled ruby. It is easier to install ruby using above link.
 
 ## Setup
@@ -28,7 +28,7 @@ Password is optional for all samples
 ### Simple
 `ruby simple.rb host port password`
 
-### Sentinel 
+### Sentinel
 `ruby sentinel.rb sentinelhost sentinelport service password`
 
 ### Cluster
@@ -40,5 +40,5 @@ Password is optional for all samples
 ### Sentinel TLS
 `ruby sentinelTLS.rb sentinelhost sentinelport service password`
 
-### Cluster
+### Cluster TLS
 `ruby clusterTLS.rb host port password`

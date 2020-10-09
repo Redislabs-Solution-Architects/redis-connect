@@ -1,4 +1,3 @@
-
 # Node.js ioredis
 * Library: https://github.com/luin/ioredis
 * Library version : 4.17.3
@@ -17,11 +16,11 @@
 Well documented , well liked library.
 
 ## Prerequisite
-Download and install Node.js https://nodejs.org/en/download/ 
+Download and install [Node.js](https://nodejs.org/en/download/)
 
 ## Setup
 `cd node.js/ioredis` and  Install the packages
-```
+```bash
 npm install
 ```
 

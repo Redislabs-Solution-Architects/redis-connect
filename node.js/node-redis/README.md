@@ -16,11 +16,11 @@
 Popular library
 
 ## Prerequisite
-Download and install Node.js https://nodejs.org/en/download/ 
+Download and install [Node.js](https://nodejs.org/en/download/)
 
 ## Setup
 `cd node-redis` and  Install the packages
-```
+```bash
 npm install
 ```
 

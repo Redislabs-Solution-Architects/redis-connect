@@ -1,5 +1,5 @@
 # .NET StackExchange.Redis 
-* Library: https://stackexchange.github.io/StackExchange.Redis/
+* Library: [StackExchange.Redis](https://stackexchange.github.io/StackExchange.Redis/)
 * Library version : 2.1.58. RS sentinel does not work with version 2.1.58 and uses older version 2.1.30
 * Runtime Version: .Net Core 3.1.201
 * RS version: 6.0.6-35
@@ -8,7 +8,7 @@
 |     | Simple | Sentinel| Cluster|
 |:--- |:---:   |:---:    |:---:   |
 |     | Y      | Y       | Y      |
-| TLS | Y      | Y       | Y      | 
+| TLS | Y      | Y       | Y      |
 
 * N/A : Not Available
 * N/C : Not researched or checked
@@ -20,7 +20,7 @@ Major OSS .Net library
 
 ## Prerequisite
 
-Install .Net Core https://dotnet.microsoft.com/download 
+Install [.Net Core](https://dotnet.microsoft.com/download)
 
 ## Setup
 
@@ -29,13 +29,13 @@ Password is optional for all samples
 
 ### Simple/Cluster
 cd simple
-```
+```bash
 dotnet build
 dotnet run host port password
 ```
-### Sentinel 
+### Sentinel
 cd sentinel
-```
+```bash
 dotnet build
 dotnet run sentinelhost sentinelport service password
 ```
@@ -44,7 +44,7 @@ dotnet run sentinelhost sentinelport service password
 Change the location of PFX file and password in code. For oneway TLS comment out the certificate line
 
 cd simpletls
-```
+```bash
 dotnet build
 dotnet run host port password
 ```
@@ -53,7 +53,7 @@ dotnet run host port password
 Change the location of PFX file and password in code. For oneway TLS comment out the certificate line. Note for Discovery service the sample also uses TLS
 
 cd sentineltls
-```
+```bash
 dotnet build
 dotnet run sentinelhost sentinelport service password
 ```
