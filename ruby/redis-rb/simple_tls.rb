@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "redis"
 
 if !(ARGV.length == 2 || ARGV.length == 3)
@@ -9,12 +10,12 @@ HOST = ARGV[0]
 PORT = ARGV[1]
 PASSWORD = ARGV.length == 3 ? ARGV[2] : nil
 begin
-  redis = Redis.new(host: HOST, port: PORT, password: PASSWORD, ssl: true, :ssl_params => {
-                      :ca_file => "../../testscripts/tls/ca_cert.pem",
-                      :cert => OpenSSL::X509::Certificate.new(File.read("../../testscripts/tls/db_cert.pem")),
-                      :key => OpenSSL::PKey::RSA.new(File.read("../../testscripts/tls/db_key.pem")),
-                      :verify_mode => OpenSSL::SSL::VERIFY_PEER,
-                      :verify_callback => lambda { |preverify_ok, store_context|
+  redis = Redis.new(host: HOST, port: PORT, password: PASSWORD, ssl: true, ssl_params: {
+                      ca_file: "../../testscripts/tls/ca_cert.pem",
+                      cert: OpenSSL::X509::Certificate.new(File.read("../../testscripts/tls/db_cert.pem")),
+                      key: OpenSSL::PKey::RSA.new(File.read("../../testscripts/tls/db_key.pem")),
+                      verify_mode: OpenSSL::SSL::VERIFY_PEER,
+                      verify_callback: lambda { |preverify_ok, store_context|
                         # do any certification verification here
                         return preverify_ok
                       },

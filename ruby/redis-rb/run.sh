@@ -27,13 +27,13 @@ ruby cluster.rb $CLUSTER
 ruby cluster.rb $CLUSTER_P
 
 printf "\nSimple TLS....\n"
-ruby simpleTLS.rb $SIMPLE_TLS
-ruby simpleTLS.rb $SIMPLE_P_TLS
+ruby simple_tls.rb $SIMPLE_TLS
+ruby simple_tls.rb $SIMPLE_P_TLS
 
 printf "\nSentinel TLS....\n"
-ruby sentinelTLS.rb $SENTINEL_TLS
-ruby sentinelTLS.rb $SENTINEL_P_TLS
+ruby sentinel_tls.rb $SENTINEL_TLS
+ruby sentinel_tls.rb $SENTINEL_P_TLS
 
 printf "\nCluster TLS....\n"
-ruby clusterTLS.rb $CLUSTER_TLS
-ruby clusterTLS.rb $CLUSTER_P_TLS
+ruby cluster_tls.rb $CLUSTER_TLS
+ruby cluster_tls.rb $CLUSTER_P_TLS

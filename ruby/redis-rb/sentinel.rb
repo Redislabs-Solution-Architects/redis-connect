@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "redis"
 
 if !(ARGV.length == 3 || ARGV.length == 4)
