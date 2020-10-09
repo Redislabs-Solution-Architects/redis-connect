@@ -13,7 +13,6 @@ def main():
         password = sys.argv[3]
 
     r = redis.StrictRedis(host=host, port=port, password=password)
-    print("Connected to Redis")
 
     print("Set: {}".format(r.set("foo", "bar")))
     print("Get: {}".format(r.get("foo")))

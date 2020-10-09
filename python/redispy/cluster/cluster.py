@@ -17,7 +17,7 @@ def main():
     rc = rediscluster.RedisCluster(
         startup_nodes=startup_nodes, decode_responses=True, password=password
     )
-    print("Connected to Redis")
+
     print("Set: {}".format(rc.set("foo", "bar")))
     print("Get: {}".format(rc.get("foo")))
 

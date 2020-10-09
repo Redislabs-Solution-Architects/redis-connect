@@ -1,6 +1,5 @@
 import redis
 import sys
-from pathlib import Path
 
 
 def main():
@@ -22,9 +21,8 @@ def main():
         ssl_certfile="../../testscripts/tls/db_cert.pem",
         ssl_cert_reqs="required",
         ssl_ca_certs="../../testscripts/tls/ca_cert.pem",
-        ssl_check_hostname=True
+        ssl_check_hostname=True,
     )
-    print("Connected to Redis")
 
     print("Set: {}".format(r.set("foo", "bar")))
     print("Get: {}".format(r.get("foo")))

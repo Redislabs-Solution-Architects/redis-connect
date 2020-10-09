@@ -20,11 +20,10 @@ def main():
     s = redis.sentinel.Sentinel(sentinel_list, socket_timeout=1.0)
     r = s.master_for(service_name, socket_timeout=1.0, password=password)
 
-    print("Connected to Redis")
     print("Set: {}".format(r.set("foo", "bar")))
     print("Get: {}".format(r.get("foo")))
 
-    # just for completeness close the connection pool
+    # close the connection pool
     r.connection_pool.disconnect()
 
 

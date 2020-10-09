@@ -27,6 +27,7 @@ if not DB_PASSWORD:
     print("DB_PASSWORD variable not set")
     exit(1)
 
+
 # Using python as bash script gets complex with certificates
 def create_db(data):
     return requests.post(
@@ -163,7 +164,9 @@ def main():
     add_certs(req, "tls/db_cert.pem")
     print(create_db(req).content)
 
-    print("\n\n++ CLUSTER_P_TLS HA 6 shard with OSS cluster with password with TLS 10008\n")
+    print(
+        "\n\n++ CLUSTER_P_TLS HA 6 shard with OSS cluster with password with TLS 10008\n"
+    )
     req = {
         "name": "cluster-p-tls",
         "port": 10008,
