@@ -17,6 +17,8 @@
 * Simple fast library, documentation can be struggle see [tests](https://github.com/xetorthio/jedis/tree/master/src/test/java/redis/clients/jedis/tests)
 * Does not support TLS with Sentinel. see [PR](https://github.com/xetorthio/jedis/pull/2024)
 * A more comprehensive example from Julien is available in SA [repo](https://github.com/Redislabs-Solution-Architects/redconn)
+* No auto-reconnect OOTB but using connection pooling gives you some of that. [StackOverflow](https://stackoverflow.com/questions/18107146/reconnection-to-redis-after-reboot)
+* Unless things changed recently you cannot do pipelining with the Cluster API in Jedis
 
 
 ## Prerequisite
