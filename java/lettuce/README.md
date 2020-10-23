@@ -17,9 +17,9 @@
 * Popular library, defaults for Spring. Good documentation
 * For TLS could not find hook for custom host name verifier. Had to disable host verification for sentinel and cluster
 * Lettuce has 3 different APIs: sync, async, and reactive
-** Sync should be used for simple interactions (typically http request/response with low concurrency)
-** Async should be used in conjunction with connection pooling for high-throughput use cases (batch jobs). [Lettuce Connection Pooling](https://github.com/lettuce-io/lettuce-core/wiki/Connection-Pooling#connection-pool-support)
-** Reactive should be used by mature development teams that already have some reactive programming experience (reactive web framework to reactive redis)
+   * Sync should be used for simple interactions (typically http request/response with low concurrency)
+   * Async should be used in conjunction with connection pooling for high-throughput use cases (batch jobs). [Lettuce Connection Pooling](https://github.com/lettuce-io/lettuce-core/wiki/Connection-Pooling#connection-pool-support)
+   * Reactive should be used by mature development teams that already have some reactive programming experience (reactive web framework to reactive redis)
 
 ## Prerequisite
 Install [Java JDK](https://openjdk.java.net/install/index.html)
