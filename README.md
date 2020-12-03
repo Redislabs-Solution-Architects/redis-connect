@@ -5,8 +5,6 @@ For each library have the following connection types
 * Sentinel
 * Cluster
 
-# Overview Video
-[Overview video available on Google Drive](https://drive.google.com/file/d/1Hnx5aC5nV8ev22vvA2VjrL3GvDNka0Yp/view?usp=sharing)
 
 # Sample Program
 In each example
