@@ -2,7 +2,7 @@
 * Library: [redis-plus-plus](https://github.com/sewenew/redis-plus-plus)
 * Library version : redis-plus-plus 1.2/hiredis 1.0
 * Runtime Version: C++ 11 / C++ 17
-* RS version: 6.0.6-35
+* RS version: 6.0.8-32
 * OSS Redis: 6.0.6
 
 |     | Simple | Sentinel| Cluster|

@@ -2,7 +2,7 @@
 * Library: https://github.com/NodeRedis/node-redis
 * Library version : 3.0.2
 * Runtime Version: node.js v12.18.3
-* RS version: 6.0.6-35
+* RS version: 6.0.8-32
 * OSS Redis: 6.0.6
 
 |     | Simple | Sentinel| Cluster|

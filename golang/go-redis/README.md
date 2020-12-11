@@ -2,7 +2,7 @@
 * Library: [go-redis](https://github.com/go-redis/redis)
 * Library version : v8.2.2
 * Runtime Version: go 1.14
-* RS version: 6.0.6-35
+* RS version: 6.0.8-32
 * OSS Redis: 6.0.6
 
 |     | Simple | Sentinel| Cluster|

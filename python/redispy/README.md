@@ -2,7 +2,7 @@
 * Library: [redis-py](https://github.com/andymccurdy/redis-py)
 * Library version : 3.5.3
 * Library version: Python 3.7.3
-* RS version: 6.0.6-35
+* RS version: 6.0.8-32
 * OSS Redis: 6.0.6
 
 |     | Simple | Sentinel| Cluster|

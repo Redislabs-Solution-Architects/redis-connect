@@ -3,7 +3,7 @@
 * Library: [Lettuce](https://github.com/lettuce-io/lettuce-core)
 * Library version : 5.3.3.RELEASE
 * Runtime Version: JDK 12
-* RS version: 6.0.6-35
+* RS version: 6.0.8-32
 * OSS Redis: 6.0.6
 
 |     | Simple | Sentinel| Cluster|

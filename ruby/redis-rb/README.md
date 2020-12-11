@@ -2,7 +2,7 @@
 * Library: [redis-rb](https://github.com/redis/redis-rb)
 * Library version : 4.2.2
 * Runtime Version: 2.7.1
-* RS version: 6.0.6-35
+* RS version: 6.0.8-32
 * OSS Redis: 6.0.6
 
 |     | Simple | Sentinel| Cluster|

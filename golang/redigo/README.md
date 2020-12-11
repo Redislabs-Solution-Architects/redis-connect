@@ -2,7 +2,7 @@
 * Library: [redigo](https://github.com/gomodule/redigo)
 * Library version : v2.0.0
 * Runtime Version: go 1.14
-* RS version: 6.0.6-35
+* RS version: 6.0.8-32
 * OSS Redis: 6.0.6
 
 |     | Simple | Sentinel| Cluster|

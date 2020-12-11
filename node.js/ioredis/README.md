@@ -2,7 +2,7 @@
 * Library: https://github.com/luin/ioredis
 * Library version : 4.17.3
 * Runtime Version: node.js v12.18.3
-* RS version: 6.0.6-35
+* RS version: 6.0.8-32
 * OSS Redis: 6.0.6 
 
 |     | Simple | Sentinel| Cluster|
