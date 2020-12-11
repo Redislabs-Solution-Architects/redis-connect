@@ -33,16 +33,14 @@ namespace sentinel
         static ConnectionMultiplexer getMultiplexer()
         {
             ConfigurationOptions configuration = new ConfigurationOptions();
-            configuration.ServiceName = serviceName;
 
             //you can add more sentinels here
             configuration.EndPoints.Add(sentinelHost, sentinelPort);
-            configuration.TieBreaker = "";
+            configuration.AllowAdmin = true;
 
-            configuration.CommandMap = CommandMap.Sentinel;
-            ConnectionMultiplexer sentinel = ConnectionMultiplexer.Connect(configuration, Console.Out);
-
-            var masterConfig = new ConfigurationOptions() { ServiceName = serviceName, Password = password };
+            ConnectionMultiplexer sentinel = ConnectionMultiplexer.SentinelConnect(configuration, Console.Out);
+           
+            var masterConfig = new ConfigurationOptions() { ServiceName = serviceName, Password = password, AllowAdmin=true };
             return sentinel.GetSentinelMasterConnection(masterConfig, Console.Out);
         }
     }

@@ -39,7 +39,7 @@ namespace sentineltls
 
             //you can add more sentinels here
             configuration.EndPoints.Add(sentinelHost, sentinelPort);
-            configuration.TieBreaker = "";
+            configuration.AllowAdmin = true;
             configuration.Ssl = true; //connect to sentinel service using TLS
 
             /* If certificate is self signed and not trusted by OS.
@@ -55,15 +55,15 @@ namespace sentineltls
                     }*/
                     return true;
                 };
-
-            configuration.CommandMap = CommandMap.Sentinel;
-            ConnectionMultiplexer sentinel = ConnectionMultiplexer.Connect(configuration, Console.Out);
+                
+            ConnectionMultiplexer sentinel = ConnectionMultiplexer.SentinelConnect(configuration, Console.Out);
 
             var masterConfig = new ConfigurationOptions()
             {
                 ServiceName = serviceName,
                 Password = password,
                 Ssl = true,
+                AllowAdmin = true
             };
 
             /* If certificate is selfsigned and not trusted. 
