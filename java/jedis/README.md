@@ -1,6 +1,6 @@
  # Java Jedis 
 * Library: [Jedis](https://github.com/xetorthio/jedis)
-* Library version : 3.3.0
+* Library version : 3.4.0
 * Runtime Version: JDK 12
 * RS version: 6.0.8-32
 * OSS Redis: 6.0.6
