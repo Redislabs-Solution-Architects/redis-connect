@@ -19,8 +19,19 @@ var tlsOpts = {
   key: fs.readFileSync('../../testscripts/tls/db_key.pem'),
   cert: fs.readFileSync('../../testscripts/tls/db_cert.pem'),
   ca: [fs.readFileSync('../../testscripts/tls/ca_cert.pem')],
-  // enableTrace: true,
-  // checkServerIdentity: (hostname, cert) => {return null;}, //return null if you do not want to do verify hostname
+  // enableTrace: true,  //required for TLS connection troubleshooting
+  // 
+  // For connection to an endpoint configured with non-mutual TLS and 
+  // requiring SNI (such as an Openshift Route (HAProxy), set
+  // `servername` as below. Additionally, for a self-signed server 
+  // certificate Node.js must be configured with `checkServerIdentity` 
+  // as below and the environment variable: 
+  // NODE_TLS_REJECT_UNAUTHORIZED=0. 
+  //   * in code: process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+  //   * in command line: export the above setting per your shell
+  //
+  // checkServerIdentity: (hostname, cert) => {return null;}, //return null if you do not want to do verify hostname in server certificate
+  // servername: host,  
 }
 
 const client = redis.createClient({
