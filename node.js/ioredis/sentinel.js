@@ -19,6 +19,21 @@ var redis = new Redis({
         host: sentinelHost,
         port: sentinelPort
     }], // you can add more sentinels here
+    
+    // This enables TLS for the DATA connection (endpoint)
+    tls: {
+      ca: fs.readFileSync("cert.pem"),
+    },
+    
+    // This enables TLS for the sentinel connection 
+    // if this was enabled on the cluster-side with
+    // # rladmin cluster config sentinel_ssl_policy allowed
+    // # supervisorctl restart sentinel_service
+    enableTLSForSentinelMode: true,
+    sentinelTLS: {
+      ca: fs.readFileSync("cert.pem"),
+    }
+    
     name: service,
     password: password
 })
